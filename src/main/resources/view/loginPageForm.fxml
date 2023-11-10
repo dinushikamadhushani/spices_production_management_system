@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="771.0" prefWidth="1246.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginPageFormController">
+   <children>
+      <Text fill="#110c0ae0" layoutX="816.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="238.7294921875">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text fill="#171010" layoutX="818.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doesn't have an account yet? ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtusername" layoutX="820.0" layoutY="258.0" prefHeight="42.0" prefWidth="303.0" />
+      <Text layoutX="822.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="825.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtpassword" layoutX="823.0" layoutY="371.0" prefHeight="40.0" prefWidth="301.0" />
+      <ImageView fitHeight="20.0" fitWidth="34.0" layoutX="1098.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icon/images.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="34.0" layoutX="1095.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icon/download.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="829.0" layoutY="492.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="301.0" style="-fx-background-color: orange;" text="Login">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <Hyperlink layoutX="1030.0" layoutY="147.0" onAction="#hypsignupOnAction" text="Sign up">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="822.0" layoutY="417.0" onAction="#hypforgotpasswordOnAction" text="Forgot password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
+      <ImageView fitHeight="54.0" fitWidth="72.0" layoutX="869.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/image/download.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="918.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- or login with -">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="1348.0" fitWidth="772.0" layoutY="-572.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/image/linus-mimietz-O3ISKgWmzPo-unsplash.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="60.0" layoutX="1049.0" layoutY="622.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/image/images.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="959.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/image/Facebook-logo-blue-circle-large-transparent-png.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
