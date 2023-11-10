@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -15,6 +16,10 @@ public class Navigation {
     private static Parent rootNode;
     private static Scene scene;
     private static Stage stage;
+
+    @FXML
+    private AnchorPane pagingPane;
+
 
     public static void switchNavigation(String path, ActionEvent event) throws IOException {
         rootNode = FXMLLoader.load(Navigation.class.getResource("/view/" + path));
@@ -26,10 +31,16 @@ public class Navigation {
         stage.show();
     }
 
-    public static void switchPaging(Pane pane, String path) throws IOException {
-        pane.getChildren().clear();
-        FXMLLoader loader = new FXMLLoader(Navigation.class.getResource("/view" + path));
-        Parent root = loader.load();
-        pane.getChildren().add(root);
+    public static void switchPaging(Pane pane, String path,String name) throws IOException {
+//        pane.getChildren().clear();
+//        FXMLLoader loader = new FXMLLoader(Navigation.class.getResource("/view" + path));
+//        Parent root = loader.load();
+//        pane.getChildren().add(root);
+
+        Parent parent = FXMLLoader.load(Navigation.class.getResource("/view/"+path));
+        Scene scene = new Scene(parent);
+        Stage stage = (Stage) pane.getScene().getWindow();
+        stage.setTitle(name);
+        stage.setScene(scene);
     }
 }

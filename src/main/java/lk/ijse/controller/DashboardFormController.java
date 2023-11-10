@@ -2,8 +2,12 @@ package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.ijse.util.Navigation;
 import lk.ijse.util.Navigation;
 
@@ -16,8 +20,7 @@ public class DashboardFormController {
 
     @FXML
     void btncustomerOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(pagingPane,"customerForm.fxml");
-
+        Navigation.switchPaging(pagingPane,"customerForm.fxml","dASHBORD");
 
     }
 
@@ -33,7 +36,7 @@ public class DashboardFormController {
 
     @FXML
     void btnhomeOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(pagingPane,"homePageForm.fxml" );
+        Navigation.switchPaging(pagingPane,"homePageForm.fxml","Dashbord");
 
     }
 

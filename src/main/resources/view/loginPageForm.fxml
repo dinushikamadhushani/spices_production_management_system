@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -32,7 +33,6 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtpassword" layoutX="823.0" layoutY="371.0" prefHeight="40.0" prefWidth="301.0" />
       <ImageView fitHeight="20.0" fitWidth="34.0" layoutX="1098.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/icon/images.png" />
@@ -83,5 +83,6 @@
             <Image url="@../assests/image/Facebook-logo-blue-circle-large-transparent-png.png" />
          </image>
       </ImageView>
+      <PasswordField fx:id="txtpassword" layoutX="825.0" layoutY="370.0" prefHeight="42.0" prefWidth="301.0" />
    </children>
 </AnchorPane>
