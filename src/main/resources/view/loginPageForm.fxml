@@ -33,11 +33,6 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <ImageView fitHeight="20.0" fitWidth="34.0" layoutX="1098.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assests/icon/images.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="20.0" fitWidth="34.0" layoutX="1095.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/icon/download.png" />
@@ -58,31 +53,16 @@
             <Font size="18.0" />
          </font>
       </Hyperlink>
-      <ImageView fitHeight="54.0" fitWidth="72.0" layoutX="869.0" layoutY="626.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assests/image/download.png" />
-         </image>
-      </ImageView>
-      <Text layoutX="918.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- or login with -">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
       <ImageView fitHeight="1348.0" fitWidth="772.0" layoutY="-572.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/image/linus-mimietz-O3ISKgWmzPo-unsplash.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="62.0" fitWidth="60.0" layoutX="1049.0" layoutY="622.0" pickOnBounds="true" preserveRatio="true">
+      <PasswordField fx:id="txtpassword" layoutX="824.0" layoutY="371.0" prefHeight="42.0" prefWidth="301.0" />
+      <ImageView fitHeight="21.0" fitWidth="50.0" layoutX="1096.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assests/image/images.png" />
+            <Image url="@../assests/icon/images.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="959.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assests/image/Facebook-logo-blue-circle-large-transparent-png.png" />
-         </image>
-      </ImageView>
-      <PasswordField fx:id="txtpassword" layoutX="825.0" layoutY="370.0" prefHeight="42.0" prefWidth="301.0" />
    </children>
 </AnchorPane>

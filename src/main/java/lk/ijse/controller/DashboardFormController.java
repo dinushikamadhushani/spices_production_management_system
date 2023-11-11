@@ -20,7 +20,7 @@ public class DashboardFormController {
 
     @FXML
     void btncustomerOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(pagingPane,"customerForm.fxml","dASHBORD");
+        Navigation.switchPaging(pagingPane,"customerForm.fxml","Dashboard");
 
     }
 
@@ -36,7 +36,7 @@ public class DashboardFormController {
 
     @FXML
     void btnhomeOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(pagingPane,"homePageForm.fxml","Dashbord");
+        Navigation.switchPaging(pagingPane,"homePageForm.fxml","Home");
 
     }
 
@@ -76,4 +76,21 @@ public class DashboardFormController {
 
     }
 
+    public void btnBackOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtSearchOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnSaveOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+    }
 }
