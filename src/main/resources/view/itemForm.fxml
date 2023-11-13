@@ -39,16 +39,16 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="tblItem" layoutX="24.0" layoutY="307.0" prefHeight="200.0" prefWidth="568.0">
+      <TableView fx:id="tblItem" layoutX="35.0" layoutY="307.0" prefHeight="200.0" prefWidth="608.0">
          <columns>
             <TableColumn fx:id="colItemId" prefWidth="85.0" text="Item id" />
             <TableColumn fx:id="colItemName" prefWidth="229.0" text="Item name" />
             <TableColumn fx:id="colUnitPrice" prefWidth="85.0" text="Unit Price" />
             <TableColumn fx:id="colQtyOnHand" prefWidth="105.0" text="Qty On Hand" />
-            <TableColumn fx:id="colAction" prefWidth="73.0" text="Action" />
+            <TableColumn fx:id="colAction" prefWidth="105.0" text="Action" />
          </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="531.0" layoutY="514.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="587.0" layoutY="514.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

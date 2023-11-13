@@ -15,7 +15,7 @@ public class EmployeeModel {
     public boolean saveEmployee(final EmployeeDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "INSERT INTO employee VALUES(?, ?, ?, ?,?)";
+        String sql = "INSERT INTO employee VALUES(?, ?, ?, ?,?,?,?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1, dto.getId());
@@ -23,6 +23,8 @@ public class EmployeeModel {
         pstm.setString(3, dto.getEmail());
         pstm.setString(4, dto.getTel());
         pstm.setString(5, dto.getJobTitle());
+        pstm.setString(6, dto.getSalary());
+        pstm.setString(7, dto.getDate());
 
         boolean isSaved = pstm.executeUpdate() > 0;
 
@@ -32,7 +34,7 @@ public class EmployeeModel {
     public boolean updateEmployee(final EmployeeDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "UPDATE employee SET employee_name = ?, email = ?, tel = ?, job_title WHERE employee_id = ?";
+        String sql = "UPDATE employee SET employee_name = ?, email = ?, tel = ?, job_title = ?, salary = ?, date = ? WHERE employee_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1, dto.getName());
@@ -40,6 +42,8 @@ public class EmployeeModel {
         pstm.setString(3, dto.getTel());
         pstm.setString(4, dto.getJobTitle());
         pstm.setString(5, dto.getId());
+        pstm.setString(6, dto.getSalary());
+        pstm.setString(7, dto.getDate());
 
         return pstm.executeUpdate() > 0;
     }
@@ -61,8 +65,10 @@ public class EmployeeModel {
             String email = resultSet.getString(3);
             String emp_tel = resultSet.getString(4);
             String emp_job_title = resultSet.getString(5);
+            String emp_salary = resultSet.getString(6);
+            String date = resultSet.getString(7);
 
-            dto = new EmployeeDto(emp_id, emp_name, email, emp_tel, emp_job_title);
+            dto = new EmployeeDto(emp_id, emp_name, email, emp_tel, emp_job_title, emp_salary, date);
         }
 
         return dto;
@@ -84,8 +90,10 @@ public class EmployeeModel {
             String email = resultSet.getString(3);
             String emp_tel = resultSet.getString(4);
             String emp_job_title = resultSet.getString(5);
+            String emp_salary = resultSet.getString(6);
+            String date = resultSet.getString(7);
 
-            var dto = new EmployeeDto(emp_id, emp_name, email, emp_tel, emp_job_title);
+            var dto = new EmployeeDto(emp_id, emp_name, email, emp_tel, emp_job_title, emp_salary, date);
             dtoList.add(dto);
         }
         return dtoList;
@@ -115,7 +123,9 @@ public class EmployeeModel {
                     resultSet.getString(2),
                     resultSet.getString(3),
                     resultSet.getString(4),
-                    resultSet.getString(5)
+                    resultSet.getString(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7)
             ));
         }
         return empList;

@@ -39,6 +39,13 @@ public class EmployeeFormController {
     private TableColumn<?, ?> colTel;
 
     @FXML
+    private TableColumn<?, ?> colSalary;
+
+    @FXML
+    private TableColumn<?, ?> colDate;
+
+
+    @FXML
     private TableView<EmployeeTm> tblEmployee;
 
     @FXML
@@ -57,6 +64,14 @@ public class EmployeeFormController {
     private TextField txtTel;
 
     @FXML
+    private TextField txtSalary;
+
+    @FXML
+    private TextField txtDate;
+
+
+
+    @FXML
     private AnchorPane root;
 
     public void initialize() {
@@ -70,6 +85,8 @@ public class EmployeeFormController {
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colTel.setCellValueFactory(new PropertyValueFactory<>("tel"));
         colJobTitle.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
+        colSalary.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
 
     private void loadAllEmployee() {
@@ -87,7 +104,9 @@ public class EmployeeFormController {
                                 dto.getName(),
                                 dto.getEmail(),
                                 dto.getTel(),
-                                dto.getJobTitle()
+                                dto.getJobTitle(),
+                                dto.getSalary(),
+                                dto.getDate()
                         )
                 );
             }
@@ -143,8 +162,10 @@ public class EmployeeFormController {
         String email = txtEmail.getText();
         String tel = txtTel.getText();
         String jobTitle = txtJobTitle.getText();
+        String salary = txtSalary.getText();
+        String date = txtDate.getText();
 
-        var dto = new EmployeeDto(id, name, email, tel, jobTitle);
+        var dto = new EmployeeDto(id, name, email, tel, jobTitle, salary, date);
 
         var model = new EmployeeModel();
         try {
@@ -167,8 +188,11 @@ public class EmployeeFormController {
         String email = txtEmail.getText();
         String tel = txtTel.getText();
         String jobTitle = txtJobTitle.getText();
+        String salary = txtSalary.getText();
+        String date = txtDate.getText();
 
-        var dto = new EmployeeDto(id, name, email, tel,jobTitle);
+
+        var dto = new EmployeeDto(id, name, email, tel,jobTitle, salary, date);
 
         var model = new EmployeeModel();
         try {
@@ -194,7 +218,7 @@ public class EmployeeFormController {
             if(dto != null) {
                 fillFields(dto);
             } else {
-                new Alert(Alert.AlertType.INFORMATION, "customer not found!").show();
+                new Alert(Alert.AlertType.INFORMATION, "employee not found!").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -208,6 +232,8 @@ public class EmployeeFormController {
         txtEmail.setText(dto.getEmail());
         txtTel.setText(dto.getTel());
         txtJobTitle.setText(dto.getJobTitle());
+        txtSalary.setText(dto.getSalary());
+        txtDate.setText(dto.getDate());
 
     }
 
@@ -219,6 +245,8 @@ public class EmployeeFormController {
         txtEmail.setText("");
         txtTel.setText("");
         txtJobTitle.setText("");
+        txtSalary.setText("");
+        txtDate.setText("");
     }
 
 }

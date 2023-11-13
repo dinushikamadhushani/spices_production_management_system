@@ -10,7 +10,9 @@ CREATE TABLE employee(
                          employee_name VARCHAR(25) NOT NULL,
                          email VARCHAR(30),
                          tel INT (20),
-                         job_title VARCHAR(15) NOT NULL
+                         job_title VARCHAR(15) NOT NULL,
+                         salary DECIMAL(10,2) NOT NULL,
+                         date DATE
 
 
 
@@ -73,15 +75,6 @@ CREATE TABLE Order_detail(
 
 DESC Order_detail;
 
-
-CREATE TABLE salary(
-                       salary_id VARCHAR(20) PRIMARY KEY,
-                       employee_id VARCHAR(20) NOT NULL,
-                       date date,
-                       CONSTRAINT FOREIGN KEY(employee_id) REFERENCES employee(employee_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-DESC salary;
 
 
 CREATE TABLE delivery(
@@ -147,7 +140,7 @@ CREATE TABLE supplier_detail(
 
 DESC supplier_detail;
 
-INSERT INTO employee VALUES('E001', 'Meri', 'meri@gmail.com', 11112233,'Manager');
+INSERT INTO employee VALUES('E001', 'Meri', 'meri@gmail.com', 11112233,'Manager',50000.00 ,'2023-10-5');
 
 INSERT INTO user VALUES ('U001','Meri','1111','E001');
 
