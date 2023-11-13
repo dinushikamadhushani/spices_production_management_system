@@ -33,7 +33,7 @@ public class DeliveryModel {
     public boolean updateDelivery(final DeliveryDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "UPDATE delivery SET order_id = ?, employee_id = ?, location = ?, delivery_status = ?, tel = ? WHERE customer_id = ?";
+        String sql = "UPDATE delivery SET order_id = ?, employee_id = ?, location = ?, delivery_status = ?, tel = ? WHERE delivery_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1, dto.getDeliveryId());

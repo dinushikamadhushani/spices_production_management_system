@@ -87,11 +87,11 @@
       </JFXButton>
       <TextField fx:id="txtCustomerId" layoutX="354.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
       <TextField fx:id="txtQty" layoutX="351.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblCustomer" layoutX="99.0" layoutY="314.0" prefHeight="200.0" prefWidth="791.0">
+      <TableView fx:id="tblOrders" layoutX="99.0" layoutY="314.0" prefHeight="200.0" prefWidth="791.0">
          <columns>
             <TableColumn fx:id="colOderId" prefWidth="75.0" text="Order id" />
             <TableColumn fx:id="colCustomerId" prefWidth="142.0" text="Customer id" />
-            <TableColumn fx:id="colProductId" prefWidth="190.0" text="Product id" />
+            <TableColumn fx:id="colItemId" prefWidth="190.0" text="Item id" />
             <TableColumn fx:id="colDate" prefWidth="127.0" text="Date" />
             <TableColumn fx:id="colQty" prefWidth="127.0" text="Qty" />
             <TableColumn fx:id="colPayment" prefWidth="127.0" text="Payment" />
@@ -117,9 +117,9 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="txtProductId" layoutX="610.0" layoutY="109.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtItemId" layoutX="610.0" layoutY="109.0" prefHeight="33.0" prefWidth="230.0" />
       <TextField fx:id="txtPayment" layoutX="608.0" layoutY="193.0" prefHeight="33.0" prefWidth="230.0" />
-      <Label layoutX="611.0" layoutY="91.0" text="Product id" textFill="#363232">
+      <Label layoutX="611.0" layoutY="91.0" text="Item id" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

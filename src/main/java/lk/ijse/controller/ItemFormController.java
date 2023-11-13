@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -17,6 +18,7 @@ import lk.ijse.model.ItemModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class ItemFormController {
 
@@ -75,34 +77,45 @@ public class ItemFormController {
         colAction.setCellValueFactory(new PropertyValueFactory<>("btn"));
     }
 
-    void LoadAllItems() throws SQLException {
-        var model = new ItemModel();
-
-        ObservableList<ItemTm> list = FXCollections.observableArrayList();
-
+    void LoadAllItems()  {
         try {
-            List<ItemtDto> dtos = model.loadAllItems();
+            List<ItemtDto> dtoList = itemModel.loadAllItems();
 
-            for (ItemtDto dto : dtos) {
-//                list.add(
-//                        new ItemTm(
-//                                dto.getId(),
-//                                dto.getName(),
-//                                dto.getUnitPrice(),
-//                                dto.getQtyOnHand()
-//                        )
-//                )
-                list.add(
-                        new ItemTm(
-                                dto.getId(),
-                                dto.getName(),
-                                dto.getUnitPrice(),
-                                dto.getQtyOnHand()
-                        ));
+            ObservableList<ItemTm> obList = FXCollections.observableArrayList();
+
+            for(ItemtDto dto : dtoList) {
+                Button btn = new Button("remove");
+                btn.setCursor(Cursor.HAND);
+
+                btn.setOnAction((e) -> {
+                    ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
+                    ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+                    Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+
+                    if(type.orElse(no) == yes) {
+                        int selectedIndex = tblItem.getSelectionModel().getSelectedIndex();
+                        String itemId = (String) colItemId.getCellData(selectedIndex);
+
+                        deleteItem(itemId);   //delete item from the database
+
+                        obList.remove(selectedIndex);   //delete item from the JFX-Table
+                        tblItem.refresh();
+                    }
+                });
+
+                var tm = new ItemTm(
+                        dto.getItemId(),
+                        dto.getItemName(),
+                        dto.getUnitPrice(),
+                        dto.getQtyOnHand(),
+                        btn
+                );
+                obList.add(tm);
             }
-            tblItem.setItems(list);
+            tblItem.setItems(obList);
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            throw new RuntimeException(e);
         }
     }
 
@@ -209,8 +222,8 @@ public class ItemFormController {
     }
 
     private void setFields(ItemtDto dto) {
-        txtItemId.setText(dto.getId());
-        txtItemName.setText(dto.getName());
+        txtItemId.setText(dto.getItemId());
+        txtItemName.setText(dto.getItemName());
         txtUnitPrice.setText(String.valueOf(dto.getUnitPrice()));
         txtQtyOnHand.setText(String.valueOf(dto.getQtyOnHand()));
     }
