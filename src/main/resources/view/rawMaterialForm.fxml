@@ -11,15 +11,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="779.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierFormController">
+<AnchorPane prefHeight="624.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RawMaterialFormController">
    <children>
-      <Label layoutX="400.0" layoutY="40.0" text="Supplier Manage" textFill="#2c3e50">
+      <Label layoutX="205.0" layoutY="40.0" text="Raw Material Manage" textFill="#2c3e50">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSupId" layoutX="22.0" layoutY="111.0" onAction="#txtSupIdSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtRawId" layoutX="22.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtRawId" layoutX="22.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtTel" layoutX="22.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
       <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="408.0" layoutY="253.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: #2980b9;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -80,31 +80,31 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="38.0" layoutY="545.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="38.0" layoutY="542.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField fx:id="txtSupName" layoutX="261.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtId" layoutX="261.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
       <TextField fx:id="txtDate" layoutX="266.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblSupplier" layoutX="35.0" layoutY="336.0" prefHeight="200.0" prefWidth="1041.0">
+      <TableView fx:id="tblCustomer" layoutX="35.0" layoutY="336.0" prefHeight="200.0" prefWidth="1041.0">
          <columns>
-            <TableColumn fx:id="colRawId" prefWidth="75.0" text="Supplier id" />
-            <TableColumn fx:id="colSupplierId" prefWidth="142.0" text="Supplier Name" />
-            <TableColumn fx:id="colName" prefWidth="190.0" text="Tel" />
+            <TableColumn fx:id="colRawId" prefWidth="75.0" text="Raw Material id" />
+            <TableColumn fx:id="colSupplierId" prefWidth="142.0" text="Supplier id" />
+            <TableColumn fx:id="colName" prefWidth="190.0" text="Name" />
             <TableColumn fx:id="colAddress" prefWidth="127.0" text="Address" />
-            <TableColumn fx:id="colTel" prefWidth="127.0" text="Raw Material Id" />
+            <TableColumn fx:id="colTel" prefWidth="127.0" text="Tel" />
             <TableColumn fx:id="colDate" prefWidth="127.0" text="Date" />
             <TableColumn fx:id="colUnitPrice" prefWidth="127.0" text="Unit price" />
             <TableColumn fx:id="colQty" prefWidth="127.0" text="Qty On stock" />
          </columns>
       </TableView>
-      <Label layoutX="28.0" layoutY="175.0" text="Raw Material Id" textFill="#363232">
+      <Label layoutX="28.0" layoutY="90.0" text="Raw Material Id" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="93.0" text="Supplier Id" textFill="#363232">
+      <Label layoutX="263.0" layoutY="93.0" text="Supplier Id" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -114,15 +114,15 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="503.0" layoutY="92.0" text="Supplier Tel" textFill="#363232">
+      <Label layoutX="27.0" layoutY="178.0" text="Supplier Tel" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
       <TextField fx:id="txtUnitPrice" layoutX="506.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtSupTel" layoutX="501.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtName" layoutX="501.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
       <TextField fx:id="txtQtyOnStock" layoutX="748.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtSupAddress" layoutX="746.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtAddress" layoutX="746.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
       <Label layoutX="752.0" layoutY="174.0" text="Qty On Stock" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -134,11 +134,6 @@
          </font>
       </Label>
       <Label layoutX="514.0" layoutY="174.0" text="Unit Price" textFill="#363232">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="264.0" layoutY="91.0" text="Supplier Name" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

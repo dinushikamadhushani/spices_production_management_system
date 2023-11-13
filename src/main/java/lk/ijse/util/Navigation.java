@@ -17,10 +17,6 @@ public class Navigation {
     private static Scene scene;
     private static Stage stage;
 
-    @FXML
-    private AnchorPane pagingPane;
-
-
     public static void switchNavigation(String path, ActionEvent event) throws IOException {
         rootNode = FXMLLoader.load(Navigation.class.getResource("/view/" + path));
 
@@ -42,5 +38,11 @@ public class Navigation {
         Stage stage = (Stage) pane.getScene().getWindow();
         stage.setTitle(name);
         stage.setScene(scene);
+    }
+    public static void ChangePane(AnchorPane pane, String path) throws IOException {
+        pane.getChildren().clear();
+        FXMLLoader loader = new FXMLLoader(Navigation.class.getResource("/view/" + path));
+        Parent root = loader.load();
+        pane.getChildren().add(root);
     }
 }

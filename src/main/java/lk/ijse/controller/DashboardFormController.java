@@ -2,14 +2,10 @@ package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import lk.ijse.util.Navigation;
-import lk.ijse.util.Navigation;
+
 
 import java.io.IOException;
 
@@ -20,23 +16,27 @@ public class DashboardFormController {
 
     @FXML
     void btncustomerOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(pagingPane,"customerForm.fxml","Dashboard");
+        Navigation.ChangePane(pagingPane,"customerForm.fxml");
 
     }
 
     @FXML
-    void btndeliveryOnAction(ActionEvent event) {
+    void btndeliveryOnAction(ActionEvent event) throws IOException {
+        Navigation.ChangePane(pagingPane,"deliveryForm.fxml");
+
 
     }
 
     @FXML
-    void btnemployeeOnAction(ActionEvent event) {
+    void btnemployeeOnAction(ActionEvent event) throws IOException {
+        Navigation.ChangePane(pagingPane,"employeeForm.fxml");
+
 
     }
 
     @FXML
     void btnhomeOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(pagingPane,"homePageForm.fxml","Home");
+        Navigation.ChangePane(pagingPane,"homePageForm.fxml");
 
     }
 
@@ -52,45 +52,38 @@ public class DashboardFormController {
     }
 
     @FXML
-    void btnordersOnAction(ActionEvent event) {
+    void btnordersOnAction(ActionEvent event) throws IOException {
+        Navigation.ChangePane(pagingPane,"ordersForm.fxml");
+
 
     }
 
     @FXML
-    void btnproductOnAction(ActionEvent event) {
+    void btnproductOnAction(ActionEvent event) throws IOException {
+        Navigation.ChangePane(pagingPane,"itemForm.fxml");
+
 
     }
 
     @FXML
-    void btnrawmaterialOnAction(ActionEvent event) {
+    void btnrawmaterialOnAction(ActionEvent event) throws IOException {
+        Navigation.ChangePane(pagingPane,"rawMaterialForm.fxml");
+
 
     }
 
     @FXML
-    void btnsalaryOnAction(ActionEvent event) {
+    void btnsalaryOnAction(ActionEvent event) throws IOException {
+
 
     }
 
     @FXML
-    void btnsupplierOnAction(ActionEvent event) {
+    void btnsupplierOnAction(ActionEvent event) throws IOException {
+        Navigation.ChangePane(pagingPane,"supplierForm.fxml");
+
 
     }
 
-    public void btnBackOnAction(ActionEvent actionEvent) {
-    }
 
-    public void txtSearchOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnSaveOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnClearOnAction(ActionEvent actionEvent) {
-    }
 }

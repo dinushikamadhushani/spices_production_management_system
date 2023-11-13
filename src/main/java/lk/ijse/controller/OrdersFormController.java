@@ -7,61 +7,49 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class SupplierFormController {
+public class OrdersFormController {
 
     @FXML
-    private TableColumn<?, ?> colAddress;
+    private TableColumn<?, ?> colCustomerId;
 
     @FXML
     private TableColumn<?, ?> colDate;
 
     @FXML
-    private TableColumn<?, ?> colName;
+    private TableColumn<?, ?> colOderId;
+
+    @FXML
+    private TableColumn<?, ?> colPayment;
+
+    @FXML
+    private TableColumn<?, ?> colProductId;
 
     @FXML
     private TableColumn<?, ?> colQty;
 
     @FXML
-    private TableColumn<?, ?> colRawId;
-
-    @FXML
-    private TableColumn<?, ?> colSupplierId;
-
-    @FXML
-    private TableColumn<?, ?> colTel;
-
-    @FXML
-    private TableColumn<?, ?> colUnitPrice;
-
-    @FXML
     private AnchorPane root;
 
     @FXML
-    private TableView<?> tblSupplier;
+    private TableView<?> tblCustomer;
+
+    @FXML
+    private TextField txtCustomerId;
 
     @FXML
     private TextField txtDate;
 
     @FXML
-    private TextField txtQtyOnStock;
+    private TextField txtOderId;
 
     @FXML
-    private TextField txtRawId;
+    private TextField txtPayment;
 
     @FXML
-    private TextField txtSupAddress;
+    private TextField txtProductId;
 
     @FXML
-    private TextField txtSupId;
-
-    @FXML
-    private TextField txtSupName;
-
-    @FXML
-    private TextField txtSupTel;
-
-    @FXML
-    private TextField txtUnitPrice;
+    private TextField txtQty;
 
     @FXML
     void btnBackOnAction(ActionEvent event) {
@@ -89,7 +77,7 @@ public class SupplierFormController {
     }
 
     @FXML
-    void txtSupIdSearchOnAction(ActionEvent event) {
+    void txtSearchOnAction(ActionEvent event) {
 
     }
 
