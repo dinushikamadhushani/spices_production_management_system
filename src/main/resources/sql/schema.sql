@@ -57,7 +57,7 @@ CREATE TABLE item(
                      item_id VARCHAR(20) PRIMARY KEY,
                      item_name VARCHAR(25) NOT NULL,
                      unit_price DECIMAL(10,2)NOT NULL,
-                     qty_on_stock INT(30)
+                     qty_on_hand INT(30)
 );
 
 

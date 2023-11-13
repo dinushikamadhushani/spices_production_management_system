@@ -31,10 +31,10 @@ public class ItemModel {
         String sql = "UPDATE item SET item_name = ?, unit_price = ?, qty_on_hand = ? WHERE item_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        pstm.setString(1, itemtDto.getItemId());
+        pstm.setString(1, itemtDto.getItemName());
         pstm.setDouble(2, itemtDto.getUnitPrice());
         pstm.setInt(3, itemtDto.getQtyOnHand());
-        pstm.setString(4, itemtDto.getItemName());
+        pstm.setString(4, itemtDto.getItemId());
 
         return pstm.executeUpdate() > 0;
     }
