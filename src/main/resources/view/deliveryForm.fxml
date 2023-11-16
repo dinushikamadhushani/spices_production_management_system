@@ -80,20 +80,20 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="38.0" layoutY="542.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="542.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
       <TextField fx:id="txtOrderId" layoutX="261.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
       <TextField fx:id="txtDeliveryStatus" layoutX="266.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblDelivery" layoutX="35.0" layoutY="336.0" prefHeight="200.0" prefWidth="791.0">
+      <TableView fx:id="tblDelivery" layoutX="20.0" layoutY="336.0" prefHeight="200.0" prefWidth="791.0">
          <columns>
-            <TableColumn fx:id="colDeliveryId" prefWidth="75.0" text="Delivery id" />
-            <TableColumn fx:id="colOrderId" prefWidth="142.0" text="Order id" />
-            <TableColumn fx:id="colEmployeeId" prefWidth="190.0" text="Employee id" />
-            <TableColumn fx:id="colLocation" prefWidth="127.0" text="Location" />
-            <TableColumn fx:id="colDeliveryStatus" prefWidth="127.0" text="Delivery status" />
+            <TableColumn fx:id="colDeliveryId" prefWidth="105.0" text="Delivery id" />
+            <TableColumn fx:id="colOrderId" prefWidth="112.0" text="Order id" />
+            <TableColumn fx:id="colEmployeeId" prefWidth="139.0" text="Employee id" />
+            <TableColumn fx:id="colLocation" prefWidth="154.0" text="Location" />
+            <TableColumn fx:id="colDeliveryStatus" prefWidth="151.0" text="Delivery status" />
             <TableColumn fx:id="colTel" prefWidth="127.0" text="Tel" />
          </columns>
       </TableView>

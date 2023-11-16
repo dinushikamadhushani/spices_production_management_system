@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="779.0" prefWidth="1244.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
    <children>
-      <JFXButton layoutX="36.0" layoutY="94.0" onAction="#btnproductOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Products" textFill="#141212">
+      <JFXButton layoutX="36.0" layoutY="146.0" onAction="#btnproductOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Item" textFill="#141212">
          <effect>
             <InnerShadow>
                <color>
@@ -19,28 +19,28 @@
             </InnerShadow>
          </effect>
       </JFXButton>
-      <JFXButton layoutX="34.0" layoutY="144.0" onAction="#btncustomerOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Customer">
+      <JFXButton layoutX="34.0" layoutY="95.0" onAction="#btncustomerOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Customer">
          <effect>
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton layoutX="34.0" layoutY="194.0" onAction="#btnsupplierOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Supplier" />
-      <JFXButton layoutX="34.0" layoutY="244.0" onAction="#btnordersOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Orders" />
+      <JFXButton layoutX="34.0" layoutY="245.0" onAction="#btnsupplierOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Supplier" />
+      <JFXButton layoutX="34.0" layoutY="195.0" onAction="#btnordersOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Orders" />
       <JFXButton layoutX="34.0" layoutY="295.0" onAction="#btnrawmaterialOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Raw Material" />
       <JFXButton layoutX="34.0" layoutY="349.0" onAction="#btndeliveryOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Delivery" />
       <JFXButton layoutX="35.0" layoutY="402.0" onAction="#btnemployeeOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Employee" />
       <JFXButton layoutX="35.0" layoutY="622.0" onAction="#btnlogoutOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Log out" />
-      <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="42.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="42.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/image/icons8-product-30.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="44.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="46.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/icon/icons8-customer-50.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="38.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="26.0" fitWidth="32.0" layoutX="38.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/icon/icons8-supplier-48.png" />
          </image>
@@ -65,7 +65,7 @@
             <Image url="@../assests/icon/icons8-delivery-30.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="61.0" layoutX="42.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="23.0" fitWidth="61.0" layoutX="42.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/icon/icons8-list-64.png" />
          </image>

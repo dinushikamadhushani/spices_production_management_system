@@ -3,6 +3,7 @@ package lk.ijse.model;
 
 import lk.ijse.db.DbConnection;
 import lk.ijse.dto.ItemtDto;
+import lk.ijse.dto.tm.CartTm;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,6 +38,26 @@ public class ItemModel {
         pstm.setString(4, itemtDto.getItemId());
 
         return pstm.executeUpdate() > 0;
+    }
+
+    public boolean updateItem(List<CartTm> tmList) throws SQLException {
+        for (CartTm cartTm : tmList) {
+            if(!updateQty(cartTm)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean updateQty(CartTm cartTm) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "UPDATE item SET qty_on_hand = qty_on_hand - ? WHERE item_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setInt(1, cartTm.getQty());
+        pstm.setString(2, cartTm.getItemId());
+
+        return pstm.executeUpdate() > 0; //true
     }
 
     public ItemtDto searchItem(String ItemId) throws SQLException {

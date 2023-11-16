@@ -44,7 +44,6 @@ DESC customer;
 
 CREATE TABLE orders(
                        Order_id VARCHAR(20) PRIMARY KEY,
-                       payment DECIMAL(10,2) NOT NULL,
                        date date,
                        customer_id VARCHAR(20) NOT NULL,
                        FOREIGN KEY(customer_id) REFERENCES customer(customer_id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -68,6 +67,7 @@ CREATE TABLE Order_detail(
                              Order_id VARCHAR(20) NOT NULL,
                              item_id VARCHAR(20) NOT NULL,
                              qty INT(25),
+                             unit_price double NOT NULL,
                              CONSTRAINT FOREIGN KEY(Order_id) REFERENCES orders(Order_id) ON DELETE CASCADE ON UPDATE CASCADE,
                              CONSTRAINT FOREIGN KEY(item_id) REFERENCES item(item_id) ON DELETE CASCADE ON UPDATE CASCADE
 );

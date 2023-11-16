@@ -89,9 +89,9 @@
       <TextField fx:id="txtDate" layoutX="266.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
       <TableView fx:id="tblSupplier" layoutX="35.0" layoutY="336.0" prefHeight="200.0" prefWidth="1041.0">
          <columns>
-            <TableColumn fx:id="colRawId" prefWidth="75.0" text="Supplier id" />
-            <TableColumn fx:id="colSupplierId" prefWidth="142.0" text="Supplier Name" />
-            <TableColumn fx:id="colName" prefWidth="190.0" text="Tel" />
+            <TableColumn fx:id="colRawId" prefWidth="119.0" text="Supplier id" />
+            <TableColumn fx:id="colSupplierId" prefWidth="144.0" text="Supplier Name" />
+            <TableColumn fx:id="colName" prefWidth="144.0" text="Tel" />
             <TableColumn fx:id="colAddress" prefWidth="127.0" text="Address" />
             <TableColumn fx:id="colTel" prefWidth="127.0" text="Raw Material Id" />
             <TableColumn fx:id="colDate" prefWidth="127.0" text="Date" />
