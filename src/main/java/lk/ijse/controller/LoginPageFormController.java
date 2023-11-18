@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import lk.ijse.model.UserModel;
@@ -27,16 +28,22 @@ public class LoginPageFormController {
                 throw new RuntimeException(e);
             }
         }
+        else {
+            new Alert(Alert.AlertType.ERROR,"Invalid Credentials").show();
+        }
 
     }
 
     @FXML
-    void hypforgotpasswordOnAction(ActionEvent event) {
+    void hypforgotpasswordOnAction(ActionEvent event) throws IOException {
+        Navigation.switchNavigation("forgotPasswordForm.fxml" , event);
+
 
     }
 
     @FXML
-    void hypsignupOnAction(ActionEvent event) {
+    void hypsignupOnAction(ActionEvent event) throws IOException {
+        Navigation.switchNavigation("signUpForm.fxml" , event);
 
     }
 

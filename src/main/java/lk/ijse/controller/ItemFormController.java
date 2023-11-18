@@ -77,7 +77,7 @@ public class ItemFormController {
         colAction.setCellValueFactory(new PropertyValueFactory<>("btn"));
     }
 
-    void LoadAllItems()  {
+    private void LoadAllItems()  {
         try {
             List<ItemtDto> dtoList = itemModel.loadAllItems();
 

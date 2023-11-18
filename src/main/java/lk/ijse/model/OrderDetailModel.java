@@ -22,7 +22,7 @@ public class OrderDetailModel {
     private boolean saveOrderDetail(String orderId, CartTm cartTm) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "INSERT INTO order_detail VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO Order_detail VALUES(?, ?, ?, ?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setString(1, orderId);
         pstm.setString(2, cartTm.getItemId());

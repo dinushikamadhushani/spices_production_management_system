@@ -49,6 +49,8 @@ public class ItemModel {
         return true;
     }
 
+
+
     private boolean updateQty(CartTm cartTm) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 

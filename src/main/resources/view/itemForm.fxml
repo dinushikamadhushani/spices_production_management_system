@@ -11,35 +11,35 @@
 
 <AnchorPane fx:id="root" prefHeight="779.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ItemFormController">
    <children>
-      <Label layoutX="509.0" layoutY="24.0" text="Item Manage">
+      <Label layoutX="416.0" layoutY="24.0" text="Item Manage">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="txtItemId" layoutX="297.0" layoutY="111.0" onAction="#itemIdSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="297.0" layoutY="91.0" text="item id" />
-      <Label layoutX="661.0" layoutY="91.0" text="item name" />
-      <TextField fx:id="txtItemName" layoutX="659.0" layoutY="111.0" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="299.0" layoutY="161.0" text="unit Price" />
-      <TextField fx:id="txtUnitPrice" layoutX="298.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="659.0" layoutY="161.0" text="Qty On Hand" />
-      <TextField fx:id="txtQtyOnHand" layoutX="659.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
-      <JFXButton buttonType="RAISED" layoutX="474.0" layoutY="238.0" onAction="#btnSaveOnAction" prefHeight="24.0" prefWidth="61.0" style="-fx-background-color: lightblue;" text="Save">
+      <TextField fx:id="txtItemId" layoutX="159.0" layoutY="111.0" onAction="#itemIdSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="163.0" layoutY="91.0" text="item id" />
+      <Label layoutX="504.0" layoutY="91.0" text="item name" />
+      <TextField fx:id="txtItemName" layoutX="502.0" layoutY="111.0" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="159.0" layoutY="161.0" text="unit Price" />
+      <TextField fx:id="txtUnitPrice" layoutX="162.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="500.0" layoutY="161.0" text="Qty On Hand" />
+      <TextField fx:id="txtQtyOnHand" layoutX="500.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
+      <JFXButton buttonType="RAISED" layoutX="343.0" layoutY="238.0" onAction="#btnSaveOnAction" prefHeight="24.0" prefWidth="61.0" style="-fx-background-color: lightblue;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="381.0" layoutY="238.0" onAction="#btnUpdateOnAction" style="-fx-background-color: lightgreen;" text="Update">
+      <JFXButton buttonType="RAISED" layoutX="248.0" layoutY="238.0" onAction="#btnUpdateOnAction" style="-fx-background-color: lightgreen;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="303.0" layoutY="238.0" onAction="#btnClearOnAction" style="-fx-background-color: yellow;" text="Clear">
+      <JFXButton buttonType="RAISED" layoutX="165.0" layoutY="238.0" onAction="#btnClearOnAction" style="-fx-background-color: yellow;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="tblItem" layoutX="291.0" layoutY="307.0" prefHeight="200.0" prefWidth="608.0">
+      <TableView fx:id="tblItem" layoutX="159.0" layoutY="307.0" prefHeight="200.0" prefWidth="608.0">
          <columns>
             <TableColumn fx:id="colItemId" prefWidth="85.0" text="Item id" />
             <TableColumn fx:id="colItemName" prefWidth="229.0" text="Item name" />
@@ -48,7 +48,7 @@
             <TableColumn fx:id="colAction" prefWidth="105.0" text="Action" />
          </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="288.0" layoutY="514.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="159.0" layoutY="514.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

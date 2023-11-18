@@ -37,6 +37,13 @@ public class PlaceOrderFormController {
     private final OrderModel orderModel = new OrderModel();
     private final ObservableList<CartTm> obList = FXCollections.observableArrayList();
     private JFXButton btnAddToCart;
+
+    @FXML
+    private JFXButton btnBack;
+
+    @FXML
+    private JFXButton btnPlaceorder;
+
     @FXML
     private JFXComboBox<String> cmbCustomerId;
     @FXML
@@ -57,7 +64,7 @@ public class PlaceOrderFormController {
     @FXML
     private Label lblCustomerName;
     @FXML
-    private Label lblItemName;
+    private Label lblDescription;
     @FXML
     private Label lblOrderDate;
     @FXML
@@ -86,8 +93,8 @@ public class PlaceOrderFormController {
     }
 
     private void setCellValueFactory() {
-        colItemId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colItemName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colItemId.setCellValueFactory(new PropertyValueFactory<>("itemId"));
+        colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         colTotal.setCellValueFactory(new PropertyValueFactory<>("tot"));
@@ -140,7 +147,7 @@ public class PlaceOrderFormController {
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
         String itemId = cmbItemId.getValue();
-        String itemName = lblItemName.getText();
+        String itemName = lblDescription.getText();
         int qty = Integer.parseInt(txtQty.getText());
         double unitPrice = Double.parseDouble(lblUnitPrice.getText());
         double total = qty * unitPrice;
@@ -202,7 +209,7 @@ public class PlaceOrderFormController {
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
         String orderId = lblOrderId.getText();
-        String cusId = cmbCustomerId.getValue();
+        String customerId = cmbCustomerId.getValue();
         LocalDate date = LocalDate.parse(lblOrderDate.getText());
 
         List<CartTm> tmList = new ArrayList<>();
@@ -213,7 +220,7 @@ public class PlaceOrderFormController {
 
         var placeOrderDto = new PlaceOrderDto(
                 orderId,
-                cusId,
+                customerId,
                 date,
                 tmList
         );
@@ -238,7 +245,7 @@ public class PlaceOrderFormController {
         try {
             ItemtDto dto = itemModel.searchItem(itemId);
 
-            lblItemName.setText(dto.getItemName());
+            lblDescription.setText(dto.getItemName());
             lblUnitPrice.setText(String.valueOf(dto.getUnitPrice()));
             lblQtyOnHand.setText(String.valueOf(dto.getQtyOnHand()));
 

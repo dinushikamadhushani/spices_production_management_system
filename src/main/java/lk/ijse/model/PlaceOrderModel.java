@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class PlaceOrderModel {
     private final OrderModel orderModel = new OrderModel();
-    private final ItemModel itemModel = new ItemModel();
+   // private final ItemModel itemModel = new ItemModel();
     private final OrderDetailModel orderDetailModel = new OrderDetailModel();
 
     public boolean placeOrder(PlaceOrderDto pDto) throws SQLException {
@@ -21,19 +21,23 @@ public class PlaceOrderModel {
 
             boolean isOrderSaved = OrderModel.saveOrder(pDto.getOrderId(), pDto.getCustomerId(), pDto.getDate());
             if (isOrderSaved) {
-                boolean isUpdated = itemModel.updateItem((ItemtDto) pDto.getTmList());
-                if(isUpdated) {
+               // boolean isUpdated = itemModel.updateItem(pDto.getTmList());
+              //  if(isUpdated) {
                     boolean isOrderDetailSaved = orderDetailModel.saveOrderDetail(pDto.getOrderId(), pDto.getTmList());
                     if(isOrderDetailSaved) {
                         connection.commit();
                         result = true;
                     }
                 }
-            }
+           // }
         } catch (SQLException e) {
             connection.rollback();
+            throw e;
         } finally {
-            connection.setAutoCommit(true);
+            if (connection != null) {
+                connection.setAutoCommit(true);
+               // connection.close();
+            }
         }
         return result;
     }

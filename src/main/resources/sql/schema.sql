@@ -44,9 +44,10 @@ DESC customer;
 
 CREATE TABLE orders(
                        Order_id VARCHAR(20) PRIMARY KEY,
-                       date date,
+                       date date NOT NULL,
                        customer_id VARCHAR(20) NOT NULL,
-                       FOREIGN KEY(customer_id) REFERENCES customer(customer_id) ON DELETE CASCADE ON UPDATE CASCADE
+
+                      FOREIGN KEY(customer_id) REFERENCES customer(customer_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 DESC orders;
