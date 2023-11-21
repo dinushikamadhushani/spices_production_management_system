@@ -22,6 +22,7 @@ public class Navigation {
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(rootNode);
+        stage.setTitle("dashboard");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
