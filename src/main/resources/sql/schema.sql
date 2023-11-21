@@ -52,12 +52,24 @@ CREATE TABLE orders(
 
 DESC orders;
 
+create table raw_material(
+                             rawMaterial_id VARCHAR(20) PRIMARY KEY,
+                             material_name VARCHAR(25) NOT NULL,
+                             qty_on_stock DOUBLE NOT NULL,
+                             unit_price DOUBLE NOT NULL
+);
+
+DESC raw_material;
+
+
 
 CREATE TABLE item(
                      item_id VARCHAR(20) PRIMARY KEY,
                      item_name VARCHAR(25) NOT NULL,
                      unit_price DOUBLE NOT NULL,
-                     qty_on_hand INT(30)
+                     qty_on_hand INT(30),
+                     rawMaterial_id VARCHAR(20),
+                     CONSTRAINT FOREIGN KEY(rawMaterial_id) REFERENCES raw_material(rawMaterial_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -98,23 +110,18 @@ DESC delivery;
 CREATE TABLE supplier(
                          supplier_id VARCHAR(20) PRIMARY KEY,
                          supplier_name VARCHAR(25)NOT NULL,
-                         tel INT (20),
-                         address VARCHAR(15) NOT NULL
+
+                         address VARCHAR(15) NOT NULL,
+                         tel INT (20)
 );
 
 
 DESC supplier;
 
 
-create table raw_material(
-                             rawMaterial_id VARCHAR(20) PRIMARY KEY,
-                             material_name VARCHAR(25) NOT NULL,
-                             qty_on_stock DOUBLE NOT NULL,
-                             unit_price DOUBLE NOT NULL
-);
 
 
-DESC raw_material;
+
 
 
 CREATE TABLE bill_of_material(

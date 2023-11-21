@@ -194,10 +194,11 @@ public class RawMaterialFormController {
 
             new Alert(Alert.AlertType.ERROR, "INVALID QTY").show();
             txtQtyOnStock.setStyle("-fx-border-color: Red");
+            return false;
         }
 
-        Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
-        String unitPriceString = String.format("%.2f",qtyOnStock);
+      /*  Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        String unitPriceString = String.format("%.2f",unitPrice);
         boolean isUnitPriceValidation = Pattern.matches("[A-Za-z.]{3,}", unitPriceString);
 
         if (!isUnitPriceValidation) {
@@ -206,6 +207,8 @@ public class RawMaterialFormController {
             txtUnitPrice.setStyle("-fx-border-color: Red");
             return false;
         }
+
+       */
 
 
 

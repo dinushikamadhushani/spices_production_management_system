@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -24,34 +25,37 @@
       <TextField fx:id="txtUnitPrice" layoutX="162.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
       <Label layoutX="500.0" layoutY="161.0" text="Qty On Hand" />
       <TextField fx:id="txtQtyOnHand" layoutX="500.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
-      <JFXButton buttonType="RAISED" layoutX="343.0" layoutY="238.0" onAction="#btnSaveOnAction" prefHeight="24.0" prefWidth="61.0" style="-fx-background-color: lightblue;" text="Save">
+      <JFXButton buttonType="RAISED" layoutX="683.0" layoutY="246.0" onAction="#btnSaveOnAction" prefHeight="24.0" prefWidth="61.0" style="-fx-background-color: lightblue;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="248.0" layoutY="238.0" onAction="#btnUpdateOnAction" style="-fx-background-color: lightgreen;" text="Update">
+      <JFXButton buttonType="RAISED" layoutX="590.0" layoutY="248.0" onAction="#btnUpdateOnAction" style="-fx-background-color: lightgreen;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="165.0" layoutY="238.0" onAction="#btnClearOnAction" style="-fx-background-color: yellow;" text="Clear">
+      <JFXButton buttonType="RAISED" layoutX="506.0" layoutY="250.0" onAction="#btnClearOnAction" style="-fx-background-color: yellow;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="tblItem" layoutX="159.0" layoutY="307.0" prefHeight="200.0" prefWidth="608.0">
+      <TableView fx:id="tblItem" layoutX="159.0" layoutY="346.0" prefHeight="200.0" prefWidth="777.0">
          <columns>
             <TableColumn fx:id="colItemId" prefWidth="85.0" text="Item id" />
             <TableColumn fx:id="colItemName" prefWidth="229.0" text="Item name" />
             <TableColumn fx:id="colUnitPrice" prefWidth="85.0" text="Unit Price" />
-            <TableColumn fx:id="colQtyOnHand" prefWidth="105.0" text="Qty On Hand" />
-            <TableColumn fx:id="colAction" prefWidth="105.0" text="Action" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="125.6666259765625" text="Qty On Hand" />
+            <TableColumn fx:id="colRawMaterialId" prefWidth="127.0" text="Raw material id" />
+            <TableColumn fx:id="colAction" prefWidth="121.66668701171875" text="Action" />
          </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="159.0" layoutY="514.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="159.0" layoutY="552.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Label layoutX="163.0" layoutY="237.0" text="raw material id" />
+      <ComboBox fx:id="cmbRawMaterialId" layoutX="162.0" layoutY="262.0" onAction="#cmbRawMaterialIdOnAction" prefHeight="36.0" prefWidth="246.0" />
    </children>
 </AnchorPane>

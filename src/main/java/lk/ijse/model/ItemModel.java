@@ -15,13 +15,14 @@ import java.util.List;
 public class ItemModel {
     public boolean saveItem(ItemtDto itemtDto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "INSERT INTO item VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO item VALUES(?, ?, ?, ?, ?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1, itemtDto.getItemId());
         pstm.setString(2, itemtDto.getItemName());
         pstm.setDouble(3, itemtDto.getUnitPrice());
         pstm.setInt(4, itemtDto.getQtyOnHand());
+        pstm.setString(5, itemtDto.getRawMaterialId());
 
         return pstm.executeUpdate() > 0;
     }
@@ -29,13 +30,14 @@ public class ItemModel {
     public boolean updateItem(ItemtDto itemtDto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "UPDATE item SET item_name = ?, unit_price = ?, qty_on_hand = ? WHERE item_id = ?";
+        String sql = "UPDATE item SET item_name = ?, unit_price = ?, qty_on_hand = ?, rawMaterial_id = ? WHERE item_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1, itemtDto.getItemName());
         pstm.setDouble(2, itemtDto.getUnitPrice());
         pstm.setInt(3, itemtDto.getQtyOnHand());
-        pstm.setString(4, itemtDto.getItemId());
+        pstm.setString(4, itemtDto.getRawMaterialId());
+        pstm.setString(5, itemtDto.getItemId());
 
         return pstm.executeUpdate() > 0;
     }
@@ -78,7 +80,8 @@ public class ItemModel {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getDouble(3),
-                    resultSet.getInt(4)
+                    resultSet.getInt(4),
+                    resultSet.getString(5)
             );
         }
         return dto;
@@ -109,7 +112,8 @@ public class ItemModel {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getDouble(3),
-                    resultSet.getInt(4)
+                    resultSet.getInt(4),
+                    resultSet.getString(5)
             );
 
             dtoList.add(dto);

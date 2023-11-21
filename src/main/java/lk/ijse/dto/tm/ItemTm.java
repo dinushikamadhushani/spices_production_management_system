@@ -14,5 +14,6 @@ public class ItemTm {
     private String itemName;
     private double unitPrice;
     private int qtyOnHand;
+    private String rawMaterialId;
     private Button btn;
 }

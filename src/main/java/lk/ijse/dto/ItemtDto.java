@@ -14,4 +14,6 @@ public class ItemtDto {
     private String itemName;
     private double unitPrice;
     private int qtyOnHand;
+    private String rawMaterialId;
+
 }

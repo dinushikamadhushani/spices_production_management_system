@@ -103,7 +103,7 @@ public class RawMaterialModel {
         return pstm.executeUpdate() > 0;
     }
 
-    public List<RawMaterialDto> loadAllMaterials() throws SQLException {
+    public static List<RawMaterialDto> loadAllMaterials() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM raw_material";

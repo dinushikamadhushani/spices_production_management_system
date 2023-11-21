@@ -11,9 +11,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.ItemtDto;
+import lk.ijse.dto.RawMaterialDto;
 import lk.ijse.dto.tm.ItemTm;
 import lk.ijse.model.ItemModel;
+import lk.ijse.model.RawMaterialModel;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -22,6 +25,9 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class ItemFormController {
+
+    @FXML
+    private ComboBox<String> cmbRawMaterialId;
 
     @FXML
     private TableColumn<?, ?> colAction;
@@ -37,6 +43,9 @@ public class ItemFormController {
 
     @FXML
     private TableColumn<?, ?> colUnitPrice;
+
+    @FXML
+    private TableColumn<?, ?> colRawMaterialId;
 
     @FXML
     private AnchorPane pagingPane;
@@ -59,6 +68,9 @@ public class ItemFormController {
     @FXML
     private TextField txtUnitPrice;
 
+    @FXML
+    private Label lblRawMaterialId;
+
 
     private final ItemModel itemModel = new ItemModel();
 
@@ -68,6 +80,8 @@ public class ItemFormController {
         setCellValueFactory();
         LoadAllItems();
         setListener();
+        loadRawMaterialsIds();
+
     }
 
     private void setCellValueFactory() {
@@ -75,6 +89,7 @@ public class ItemFormController {
         colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
         colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
+        colRawMaterialId.setCellValueFactory(new PropertyValueFactory<>("rawMaterialId"));
         colAction.setCellValueFactory(new PropertyValueFactory<>("btn"));
     }
 
@@ -96,9 +111,9 @@ public class ItemFormController {
 
                     if(type.orElse(no) == yes) {
                         int selectedIndex = tblItem.getSelectionModel().getSelectedIndex();
-                        String itemId = (String) colItemId.getCellData(selectedIndex);
+                        //String itemId = (String) colItemId.getCellData(selectedIndex);
 
-                        deleteItem(itemId);   //delete item from the database
+                        //deleteItem(itemId);   //delete item from the database
 
                         obList.remove(selectedIndex);   //delete item from the JFX-Table
                         tblItem.refresh();
@@ -110,11 +125,26 @@ public class ItemFormController {
                         dto.getItemName(),
                         dto.getUnitPrice(),
                         dto.getQtyOnHand(),
+                        dto.getRawMaterialId(),
                         btn
                 );
                 obList.add(tm);
             }
             tblItem.setItems(obList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void loadRawMaterialsIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<RawMaterialDto> rawList = RawMaterialModel.loadAllMaterials();
+
+            for (RawMaterialDto dto : rawList) {
+                obList.add(dto.getRawMaterialId());
+            }
+            cmbRawMaterialId.setItems(obList);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -154,11 +184,12 @@ public class ItemFormController {
         String itemName = txtItemName.getText();
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         int qtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
+        String rawMaterialId = cmbRawMaterialId.getValue();
 
         boolean isValidate = validateItem();
 
         if(isValidate) {
-            var itemtDto = new ItemtDto(itemId, itemName, unitPrice, qtyOnHand);
+            var itemtDto = new ItemtDto(itemId, itemName, unitPrice, qtyOnHand, rawMaterialId);
 
             try {
                 boolean isSaved = itemModel.saveItem(itemtDto);
@@ -196,10 +227,10 @@ public class ItemFormController {
 
             new Alert(Alert.AlertType.ERROR, "INVALID ITEM name").show();
             txtItemName.setStyle("-fx-border-color: Red");
-            return false;
+
         }
 
-        Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+       /* Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         String unitPriceString = String.format("%.2f",unitPrice);
         boolean isUnitPriceValidation = Pattern.matches("[/d]", unitPriceString);
 
@@ -209,6 +240,8 @@ public class ItemFormController {
             txtUnitPrice.setStyle("-fx-border-color: Red");
 
         }
+
+        */
 
 
 
@@ -236,12 +269,14 @@ public class ItemFormController {
         String itemName = txtItemName.getText();
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         int qtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
+        String rawMaterialIdId = cmbRawMaterialId.getValue();
 
 //        var model = new ItemModel();
         try {
-            boolean isUpdated = itemModel.updateItem(new ItemtDto(itemId, itemName, unitPrice, qtyOnHand));
+            boolean isUpdated = itemModel.updateItem(new ItemtDto(itemId, itemName, unitPrice, qtyOnHand, rawMaterialIdId));
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "item updated").show();
+                initialize();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -288,6 +323,7 @@ public class ItemFormController {
         txtItemName.setText(dto.getItemName());
         txtUnitPrice.setText(String.valueOf(dto.getUnitPrice()));
         txtQtyOnHand.setText(String.valueOf(dto.getQtyOnHand()));
+        cmbRawMaterialId.setValue(dto.getRawMaterialId());
     }
 
     private void clearFields() {
@@ -295,6 +331,7 @@ public class ItemFormController {
         txtItemName.setText("");
         txtUnitPrice.setText("");
         txtQtyOnHand.setText("");
+        cmbRawMaterialId.setValue("");
     }
 
 
@@ -313,4 +350,13 @@ public class ItemFormController {
         }
 
     }
+
+    @FXML
+    void cmbRawMaterialIdOnAction(ActionEvent event) {
+        //String rawMaterialId = cmbRawMaterialId.getValue();
+       // RawMaterialDto dto = rawMaterialModel.searchCustomer(rawMaterialId);
+
+
+    }
+
 }
