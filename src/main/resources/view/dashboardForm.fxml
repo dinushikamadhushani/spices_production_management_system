@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="779.0" prefWidth="1244.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
+<AnchorPane prefHeight="779.0" prefWidth="1244.0" style="-fx-background-color: orange;" stylesheets="@../style/stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
    <children>
-      <JFXButton layoutX="36.0" layoutY="146.0" onAction="#btnproductOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Item" textFill="#141212">
+      <JFXButton layoutX="36.0" layoutY="146.0" onAction="#btnproductOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Item" textFill="#141212">
          <effect>
             <InnerShadow>
                <color>
@@ -19,16 +19,16 @@
             </InnerShadow>
          </effect>
       </JFXButton>
-      <JFXButton layoutX="34.0" layoutY="95.0" onAction="#btncustomerOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Customer">
+      <JFXButton layoutX="34.0" layoutY="95.0" onAction="#btncustomerOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Customer">
          <effect>
             <DropShadow />
          </effect>
       </JFXButton>
-      <JFXButton layoutX="34.0" layoutY="245.0" onAction="#btnsupplierOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Supplier" />
-      <JFXButton layoutX="34.0" layoutY="195.0" onAction="#btnordersOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Orders" />
-      <JFXButton layoutX="34.0" layoutY="295.0" onAction="#btnrawmaterialOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Raw Material" />
-      <JFXButton layoutX="34.0" layoutY="349.0" onAction="#btndeliveryOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Delivery" />
-      <JFXButton layoutX="35.0" layoutY="402.0" onAction="#btnemployeeOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Employee" />
+      <JFXButton layoutX="34.0" layoutY="245.0" onAction="#btnsupplierOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Supplier" />
+      <JFXButton layoutX="34.0" layoutY="195.0" onAction="#btnordersOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Orders" />
+      <JFXButton layoutX="34.0" layoutY="295.0" onAction="#btnrawmaterialOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Raw Material" />
+      <JFXButton layoutX="34.0" layoutY="349.0" onAction="#btndeliveryOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Delivery" />
+      <JFXButton layoutX="35.0" layoutY="402.0" onAction="#btnemployeeOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Employee" />
       <JFXButton layoutX="35.0" layoutY="622.0" onAction="#btnlogoutOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Log out" />
       <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="42.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -70,7 +70,7 @@
             <Image url="@../assests/icon/icons8-list-64.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="37.0" layoutY="43.0" onAction="#btnhomeOnAction" onMouseExited="#btnhomeOnMouseExited" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" text="Dashboard" textFill="#141212">
+      <JFXButton layoutX="37.0" layoutY="43.0" onAction="#btnhomeOnAction" onMouseExited="#btnhomeOnMouseExited" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" stylesheets="@../style/stylesheet.css" text="Dashboard" textFill="#141212">
          <effect>
             <InnerShadow>
                <color>

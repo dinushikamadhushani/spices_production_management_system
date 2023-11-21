@@ -21,6 +21,7 @@ import lk.ijse.model.CustomerModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class CustomerFormController {
     @FXML
@@ -97,19 +98,78 @@ public class CustomerFormController {
         String address = txtAddress.getText();
         String tel = txtTel.getText();
 
-        var dto = new CustomerDto(id, name, address, tel);
+        boolean isValidate = validateCustomer();
 
-        var model = new CustomerModel();
-        try {
-            boolean isSaved = model.saveCustomer(dto);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
-                clearFields();
+        if (isValidate) {
+            var dto = new CustomerDto(id, name, address, tel);
+
+            var model = new CustomerModel();
+            try {
+                boolean isSaved = model.saveCustomer(dto);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
+                    clearFields();
+                    initialize();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+
     }
+
+    private boolean validateCustomer() {
+
+        String idText = txtId.getText();
+
+        boolean isCustomerIDValidation = Pattern.matches("[C][0-9]{3,}", idText);
+
+        if (!isCustomerIDValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID CUSTOMER ID").show();
+            txtId.setStyle("-fx-border-color: Red");
+
+        }
+
+
+        String nameText = txtName.getText();
+
+        boolean isCustomerNameValidation = Pattern.matches("[A-Za-z.]{3,}", nameText);
+
+        if (!isCustomerNameValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID CUSTOMER name").show();
+            txtName.setStyle("-fx-border-color: Red");
+
+        }
+
+        String addressText = txtAddress.getText();
+
+        boolean isCustomerAddressValidation = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", addressText);
+
+        if (!isCustomerAddressValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID CUSTOMER address").show();
+            txtAddress.setStyle("-fx-border-color: Red");
+
+        }
+
+        String telText = txtTel.getText();
+
+        boolean isCustomerTelValidation = Pattern.matches("[0-9]{10}", telText);
+
+        if (!isCustomerTelValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID CUSTOMER tel").show();
+            txtTel.setStyle("-fx-border-color: Red");
+            return false;
+        }
+
+        return  true;
+    }
+
+
+
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
@@ -126,6 +186,7 @@ public class CustomerFormController {
             System.out.println(isUpdated);
             if(isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+                initialize();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -168,6 +229,7 @@ public class CustomerFormController {
             if(isDeleted) {
                 tblCustomer.refresh();
                 new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+                initialize();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -195,5 +257,6 @@ public class CustomerFormController {
         txtAddress.setText("");
         txtTel.setText("");
     }
+
 
 }

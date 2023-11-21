@@ -20,6 +20,7 @@ import lk.ijse.model.EmployeeModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class EmployeeFormController {
 
@@ -148,6 +149,7 @@ public class EmployeeFormController {
             if(isDeleted) {
                 tblEmployee.refresh();
                 new Alert(Alert.AlertType.CONFIRMATION, "employee deleted!").show();
+                initialize();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -162,23 +164,112 @@ public class EmployeeFormController {
         String email = txtEmail.getText();
         String tel = txtTel.getText();
         String jobTitle = txtJobTitle.getText();
-        String salary = txtSalary.getText();
+        Double salary = Double.valueOf(txtSalary.getText());
         String date = txtDate.getText();
 
-        var dto = new EmployeeDto(id, name, email, tel, jobTitle, salary, date);
+        boolean isValidate = validateEmployee();
 
-        var model = new EmployeeModel();
-        try {
-            boolean isSaved = model.saveEmployee(dto);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "employee saved!").show();
-                clearFields();
+        if (isValidate) {
+            var dto = new EmployeeDto(id, name, email, tel, jobTitle, salary, date);
+
+            var model = new EmployeeModel();
+            try {
+                boolean isSaved = model.saveEmployee(dto);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "employee saved!").show();
+                    clearFields();
+                    initialize();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
 
     }
+
+    private boolean validateEmployee() {
+
+        String employeeIdText = txtEmployeeId.getText();
+
+        boolean isEmployeeIDValidation = Pattern.matches("[E][0-9]{3,}", employeeIdText);
+
+        if (!isEmployeeIDValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID EMPLOYEE ID").show();
+            txtEmployeeId.setStyle("-fx-border-color: Red");
+
+        }
+
+
+        String employeeNameText = txtEmployeeName.getText();
+
+        boolean isEmployeeNameValidation = Pattern.matches("[A-Za-z.]{3,}", employeeNameText);
+
+        if (!isEmployeeNameValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID EMPLOYEE NAME").show();
+            txtEmployeeName.setStyle("-fx-border-color: Red");
+
+        }
+
+        String emailText = txtEmail.getText();
+
+        boolean isEmailValidation = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", emailText);
+
+        if (!isEmailValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID EMAIL").show();
+            txtEmail.setStyle("-fx-border-color: Red");
+
+        }
+
+        String telText = txtTel.getText();
+
+        boolean isCustomerTelValidation = Pattern.matches("[0-9]{10}", telText);
+
+        if (!isCustomerTelValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID CUSTOMER tel").show();
+            txtTel.setStyle("-fx-border-color: Red");
+
+        }
+
+        String jobTitleText = txtJobTitle.getText();
+
+        boolean isJobTitleValidation = Pattern.matches("[0-9]{10}", jobTitleText);
+
+        if (!isJobTitleValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID JOB TITLE").show();
+            txtJobTitle.setStyle("-fx-border-color: Red");
+            return false;
+        }
+
+        Double salary = Double.parseDouble(txtSalary.getText());
+        String salaryString = String.format("%.2f",salary);
+        boolean isSalaryValidation = Pattern.matches("[0-9]{10}", salaryString);
+
+        if (!isSalaryValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID SALARY").show();
+            txtSalary.setStyle("-fx-border-color: Red");
+
+        }
+
+        String dateText = txtDate.getText();
+
+        boolean isDateValidation = Pattern.matches("[0-9]{10}", dateText);
+
+        if (!isDateValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID DATE").show();
+            txtDate.setStyle("-fx-border-color: Red");
+            return false;
+        }
+
+        return  true;
+    }
+
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
@@ -188,7 +279,7 @@ public class EmployeeFormController {
         String email = txtEmail.getText();
         String tel = txtTel.getText();
         String jobTitle = txtJobTitle.getText();
-        String salary = txtSalary.getText();
+        Double salary = Double.valueOf(txtSalary.getText());
         String date = txtDate.getText();
 
 
@@ -200,6 +291,7 @@ public class EmployeeFormController {
             System.out.println(isUpdated);
             if(isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "employee updated!").show();
+                initialize();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -232,7 +324,7 @@ public class EmployeeFormController {
         txtEmail.setText(dto.getEmail());
         txtTel.setText(dto.getTel());
         txtJobTitle.setText(dto.getJobTitle());
-        txtSalary.setText(dto.getSalary());
+        txtSalary.setText(String.valueOf(dto.getSalary()));
         txtDate.setText(dto.getDate());
 
     }

@@ -13,13 +13,12 @@
 
 <AnchorPane fx:id="root" prefHeight="779.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierFormController">
    <children>
-      <Label layoutX="400.0" layoutY="40.0" text="Supplier Manage" textFill="#2c3e50">
+      <Label layoutX="326.0" layoutY="40.0" text="Supplier Manage" textFill="#2c3e50">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
       <TextField fx:id="txtSupId" layoutX="22.0" layoutY="111.0" onAction="#txtSupIdSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtRawId" layoutX="22.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
       <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="408.0" layoutY="253.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: #2980b9;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -86,30 +85,22 @@
          </cursor>
       </JFXButton>
       <TextField fx:id="txtSupName" layoutX="261.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtDate" layoutX="266.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblSupplier" layoutX="35.0" layoutY="336.0" prefHeight="200.0" prefWidth="1041.0">
+      <TextField fx:id="txtDate" layoutX="356.0" layoutY="190.0" prefHeight="33.0" prefWidth="230.0" />
+      <TableView fx:id="tblSupplier" layoutX="35.0" layoutY="336.0" prefHeight="200.0" prefWidth="707.0">
          <columns>
             <TableColumn fx:id="colRawId" prefWidth="119.0" text="Supplier id" />
             <TableColumn fx:id="colSupplierId" prefWidth="144.0" text="Supplier Name" />
             <TableColumn fx:id="colName" prefWidth="144.0" text="Tel" />
             <TableColumn fx:id="colAddress" prefWidth="127.0" text="Address" />
-            <TableColumn fx:id="colTel" prefWidth="127.0" text="Raw Material Id" />
-            <TableColumn fx:id="colDate" prefWidth="127.0" text="Date" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="127.0" text="Unit price" />
-            <TableColumn fx:id="colQty" prefWidth="127.0" text="Qty On stock" />
+            <TableColumn fx:id="colDate" prefWidth="172.0" text="Date" />
          </columns>
       </TableView>
-      <Label layoutX="28.0" layoutY="175.0" text="Raw Material Id" textFill="#363232">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
       <Label layoutX="24.0" layoutY="93.0" text="Supplier Id" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="747.0" layoutY="87.0" text="Supplier Address" textFill="#363232">
+      <Label layoutX="81.0" layoutY="166.0" text="Supplier Address" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -119,21 +110,9 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUnitPrice" layoutX="506.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
       <TextField fx:id="txtSupTel" layoutX="501.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtQtyOnStock" layoutX="748.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtSupAddress" layoutX="746.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
-      <Label layoutX="752.0" layoutY="174.0" text="Qty On Stock" textFill="#363232">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="266.0" layoutY="174.0" text="Date" textFill="#363232">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="514.0" layoutY="174.0" text="Unit Price" textFill="#363232">
+      <TextField fx:id="txtSupAddress" layoutX="80.0" layoutY="190.0" prefHeight="33.0" prefWidth="230.0" />
+      <Label layoutX="362.0" layoutY="169.0" text="Date" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

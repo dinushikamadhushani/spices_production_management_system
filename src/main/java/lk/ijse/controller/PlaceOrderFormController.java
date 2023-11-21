@@ -149,52 +149,60 @@ public class PlaceOrderFormController {
         String itemId = cmbItemId.getValue();
         String itemName = lblDescription.getText();
         int qty = Integer.parseInt(txtQty.getText());
-        double unitPrice = Double.parseDouble(lblUnitPrice.getText());
-        double total = qty * unitPrice;
-        Button btn = new Button("remove");
-        btn.setCursor(Cursor.HAND);
+        int hand = Integer.parseInt(lblQtyOnHand.getText());
+        if (qty < hand) {
+            double unitPrice = Double.parseDouble(lblUnitPrice.getText());
 
-        btn.setOnAction((e) -> {
-            ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
-            ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
+            double total = qty * unitPrice;
+            Button btn = new Button("remove");
+            btn.setCursor(Cursor.HAND);
 
-            Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+            btn.setOnAction((e) -> {
+                ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
+                ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-            if (type.orElse(no) == yes) {
-                int index = tblOrderCart.getSelectionModel().getSelectedIndex();
-                obList.remove(index);
-                tblOrderCart.refresh();
+                Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
 
-                calculateNetTotal();
+                if (type.orElse(no) == yes) {
+                    int index = tblOrderCart.getSelectionModel().getSelectedIndex();
+                    obList.remove(index);
+                    tblOrderCart.refresh();
+
+                    calculateNetTotal();
+                }
+            });
+
+            for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
+                if (itemId.equals(colItemId.getCellData(i))) {
+                    qty += (int) colQty.getCellData(i);
+                    total = qty * unitPrice;
+
+                    obList.get(i).setQty(qty);
+                    obList.get(i).setTot(total);
+
+                    tblOrderCart.refresh();
+                    calculateNetTotal();
+                    return;
+                }
             }
-        });
 
-        for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
-            if (itemId.equals(colItemId.getCellData(i))) {
-                qty += (int) colQty.getCellData(i);
-                total = qty * unitPrice;
+            obList.add(new CartTm(
+                    itemId,
+                    itemName,
+                    qty,
+                    unitPrice,
+                    total,
+                    btn
+            ));
 
-                obList.get(i).setQty(qty);
-                obList.get(i).setTot(total);
+            tblOrderCart.setItems(obList);
+            calculateNetTotal();
+            txtQty.clear();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "The stock haven't ").show();
+            txtQty.setStyle("-fx-border-color: Red");
 
-                tblOrderCart.refresh();
-                calculateNetTotal();
-                return;
-            }
         }
-
-        obList.add(new CartTm(
-                itemId,
-                itemName,
-                qty,
-                unitPrice,
-                total,
-                btn
-        ));
-
-        tblOrderCart.setItems(obList);
-        calculateNetTotal();
-        txtQty.clear();
     }
 
     private void calculateNetTotal() {

@@ -11,7 +11,7 @@ CREATE TABLE employee(
                          email VARCHAR(30),
                          tel INT (20),
                          job_title VARCHAR(15) NOT NULL,
-                         salary DECIMAL(10,2) NOT NULL,
+                         salary DOUBLE NOT NULL,
                          date DATE
 
 
@@ -56,7 +56,7 @@ DESC orders;
 CREATE TABLE item(
                      item_id VARCHAR(20) PRIMARY KEY,
                      item_name VARCHAR(25) NOT NULL,
-                     unit_price DECIMAL(10,2)NOT NULL,
+                     unit_price DOUBLE NOT NULL,
                      qty_on_hand INT(30)
 );
 
@@ -68,7 +68,7 @@ CREATE TABLE Order_detail(
                              Order_id VARCHAR(20) NOT NULL,
                              item_id VARCHAR(20) NOT NULL,
                              qty INT(25),
-                             unit_price double NOT NULL,
+                             unit_price DOUBLE NOT NULL,
                              CONSTRAINT FOREIGN KEY(Order_id) REFERENCES orders(Order_id) ON DELETE CASCADE ON UPDATE CASCADE,
                              CONSTRAINT FOREIGN KEY(item_id) REFERENCES item(item_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -109,7 +109,8 @@ DESC supplier;
 create table raw_material(
                              rawMaterial_id VARCHAR(20) PRIMARY KEY,
                              material_name VARCHAR(25) NOT NULL,
-                             qty_on_stock INT(20)
+                             qty_on_stock DOUBLE NOT NULL,
+                             unit_price DOUBLE NOT NULL
 );
 
 
@@ -133,7 +134,7 @@ CREATE TABLE supplier_detail(
                                 supplier_id VARCHAR(20) NOT NULL,
                                 rawMaterial_id VARCHAR(20) NOT NULL,
                                 date DATE,
-                                unit_price DECIMAL(10,2) NOT NULL,
+                                unit_price DOUBLE NOT NULL,
                                 qty_on_stock INT(25),
                                 FOREIGN KEY(supplier_id) REFERENCES supplier(supplier_id) ON DELETE CASCADE ON UPDATE CASCADE,
                                 FOREIGN KEY(rawMaterial_id) REFERENCES raw_material (rawMaterial_id) ON DELETE CASCADE ON UPDATE CASCADE

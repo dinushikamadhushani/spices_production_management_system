@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 public class ItemFormController {
 
@@ -154,19 +155,80 @@ public class ItemFormController {
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         int qtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
 
-        var itemtDto = new ItemtDto(itemId, itemName, unitPrice, qtyOnHand);
+        boolean isValidate = validateItem();
 
-        try {
-            boolean isSaved = itemModel.saveItem(itemtDto);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "item saved!").show();
-                clearFields();
+        if(isValidate) {
+            var itemtDto = new ItemtDto(itemId, itemName, unitPrice, qtyOnHand);
+
+            try {
+                boolean isSaved = itemModel.saveItem(itemtDto);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "item saved!").show();
+                    LoadAllItems();
+                    clearFields();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
 
     }
+
+    private boolean validateItem() {
+
+        String itemIdText = txtItemId.getText();
+
+        boolean isItemIDValidation = Pattern.matches("[I][0-9]{3,}", itemIdText);
+
+        if (!isItemIDValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID ITEM ID").show();
+            txtItemId.setStyle("-fx-border-color: Red");
+
+        }
+
+
+        String itemNameText = txtItemName.getText();
+
+        boolean isItemNameValidation = Pattern.matches("[A-Za-z.]{3,}", itemNameText);
+
+        if (!isItemNameValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID ITEM name").show();
+            txtItemName.setStyle("-fx-border-color: Red");
+            return false;
+        }
+
+        Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        String unitPriceString = String.format("%.2f",unitPrice);
+        boolean isUnitPriceValidation = Pattern.matches("[/d]", unitPriceString);
+
+        if (!isUnitPriceValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID ITEM Unit price").show();
+            txtUnitPrice.setStyle("-fx-border-color: Red");
+
+        }
+
+
+
+        String qtyOnHandText = txtQtyOnHand.getText();
+
+        boolean isQtyOnHandValidation = Pattern.matches("[-+]?[0-9]*\\.?[0-9]+", qtyOnHandText);
+
+        if (!isQtyOnHandValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID ITEM qty").show();
+            txtQtyOnHand.setStyle("-fx-border-color: Red");
+            return false;
+        }
+
+        return  true;
+    }
+
+
+
+
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {

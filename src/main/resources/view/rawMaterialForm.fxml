@@ -80,17 +80,18 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="209.0" layoutY="542.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="199.0" layoutY="542.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
       <TextField fx:id="txtRawName" layoutX="482.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblRawMaterial" layoutX="209.0" layoutY="336.0" prefHeight="200.0" prefWidth="509.0">
+      <TableView fx:id="tblRawMaterial" layoutX="198.0" layoutY="336.0" prefHeight="200.0" prefWidth="701.0">
          <columns>
             <TableColumn fx:id="colRawId" prefWidth="141.0" text="Raw Material id" />
             <TableColumn fx:id="colMaterialName" prefWidth="174.0" text="Material Name" />
             <TableColumn fx:id="colQtyOnStock" prefWidth="192.0" text="Qty On Stock" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="192.0" text="Unit price" />
          </columns>
       </TableView>
       <Label layoutX="203.0" layoutY="90.0" text="Raw Material Id" textFill="#363232">
@@ -98,12 +99,18 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="489.0" layoutY="93.0" text="Material Nme" textFill="#363232">
+      <Label layoutX="489.0" layoutY="93.0" text="Material Name" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
       <Label layoutX="205.0" layoutY="178.0" text="Qty On Stock" textFill="#363232">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUnitPrice" layoutX="485.0" layoutY="193.0" prefHeight="33.0" prefWidth="230.0" />
+      <Label layoutX="488.0" layoutY="172.0" text="Unit price" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

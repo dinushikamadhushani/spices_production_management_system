@@ -36,12 +36,13 @@ public class DeliveryModel {
         String sql = "UPDATE delivery SET order_id = ?, employee_id = ?, location = ?, delivery_status = ?, tel = ? WHERE delivery_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        pstm.setString(1, dto.getDeliveryId());
-        pstm.setString(2, dto.getOrderId());
-        pstm.setString(3, dto.getEmployeeId());
-        pstm.setString(4, dto.getLocation());
-        pstm.setString(5, dto.getDeliveryStatus());
-        pstm.setString(6, dto.getTel());
+
+        pstm.setString(1, dto.getOrderId());
+        pstm.setString(2, dto.getEmployeeId());
+        pstm.setString(3, dto.getLocation());
+        pstm.setString(4, dto.getDeliveryStatus());
+        pstm.setString(5, dto.getTel());
+        pstm.setString(6, dto.getDeliveryId());
 
         return pstm.executeUpdate() > 0;
     }

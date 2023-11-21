@@ -23,7 +23,7 @@ public class EmployeeModel {
         pstm.setString(3, dto.getEmail());
         pstm.setString(4, dto.getTel());
         pstm.setString(5, dto.getJobTitle());
-        pstm.setString(6, dto.getSalary());
+        pstm.setDouble(6, dto.getSalary());
         pstm.setString(7, dto.getDate());
 
         boolean isSaved = pstm.executeUpdate() > 0;
@@ -41,7 +41,7 @@ public class EmployeeModel {
         pstm.setString(2, dto.getEmail());
         pstm.setString(3, dto.getTel());
         pstm.setString(4, dto.getJobTitle());
-        pstm.setString(5, dto.getSalary());
+        pstm.setDouble(5, dto.getSalary());
         pstm.setString(6, dto.getDate());
         pstm.setString(7, dto.getId());
 
@@ -65,7 +65,7 @@ public class EmployeeModel {
             String email = resultSet.getString(3);
             String emp_tel = resultSet.getString(4);
             String emp_job_title = resultSet.getString(5);
-            String emp_salary = resultSet.getString(6);
+            Double emp_salary = Double.valueOf(resultSet.getString(6));
             String date = resultSet.getString(7);
 
             dto = new EmployeeDto(emp_id, emp_name, email, emp_tel, emp_job_title, emp_salary, date);
@@ -90,7 +90,7 @@ public class EmployeeModel {
             String email = resultSet.getString(3);
             String emp_tel = resultSet.getString(4);
             String emp_job_title = resultSet.getString(5);
-            String emp_salary = resultSet.getString(6);
+            Double emp_salary = Double.valueOf(resultSet.getString(6));
             String date = resultSet.getString(7);
 
             var dto = new EmployeeDto(emp_id, emp_name, email, emp_tel, emp_job_title, emp_salary, date);
@@ -124,7 +124,7 @@ public class EmployeeModel {
                     resultSet.getString(3),
                     resultSet.getString(4),
                     resultSet.getString(5),
-                    resultSet.getString(6),
+                    resultSet.getDouble(6),
                     resultSet.getString(7)
             ));
         }

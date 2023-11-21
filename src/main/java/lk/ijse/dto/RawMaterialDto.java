@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 public class RawMaterialDto {
     private String rawMaterialId;
     private String rawMaterialName;
-    private String qtyOnStock;
+    private Double qtyOnStock;
+    private Double unitPrice;
+
 
 }

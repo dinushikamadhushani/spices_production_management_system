@@ -15,12 +15,13 @@ public class RawMaterialModel {
     public boolean saveRawMaterial(final RawMaterialDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "INSERT INTO raw_material VALUES(?, ?, ?)";
+        String sql = "INSERT INTO raw_material VALUES(?, ?, ?, ?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1, dto.getRawMaterialId());
         pstm.setString(2, dto.getRawMaterialName());
-        pstm.setString(3, dto.getQtyOnStock());
+        pstm.setDouble(3, dto.getQtyOnStock());
+        pstm.setDouble(4, dto.getUnitPrice());
 
 
         boolean isSaved = pstm.executeUpdate() > 0;
@@ -31,12 +32,15 @@ public class RawMaterialModel {
     public boolean updateRawMaterial(final RawMaterialDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "UPDATE raw_material SET material_name = ?, qty_on_stock = ?, WHERE raw_material_id = ?";
+        String sql = "UPDATE raw_material SET material_name = ?, qty_on_stock = ?, unit_price = ? WHERE rawMaterial_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        pstm.setString(1, dto.getRawMaterialId());
-        pstm.setString(2, dto.getRawMaterialName());
-        pstm.setString(3, dto.getQtyOnStock());
+
+        pstm.setString(1, dto.getRawMaterialName());
+        pstm.setDouble(2, dto.getQtyOnStock());
+        pstm.setDouble(3, dto.getUnitPrice());
+        pstm.setString(4, dto.getRawMaterialId());
+
 
 
         return pstm.executeUpdate() > 0;
@@ -45,7 +49,7 @@ public class RawMaterialModel {
     public RawMaterialDto searchRawMaterial(String rawMaterialId) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "SELECT * FROM raw_material WHERE raw_material_id = ?";
+        String sql = "SELECT * FROM raw_material WHERE rawMaterial_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setString(1, rawMaterialId);
 
@@ -56,10 +60,11 @@ public class RawMaterialModel {
         if(resultSet.next()) {
             String raw_id = resultSet.getString(1);
             String raw_name = resultSet.getString(2);
-            String qty = resultSet.getString(3);
+            Double qty = resultSet.getDouble(3);
+            Double unit_price = resultSet.getDouble(4);
 
 
-            dto = new RawMaterialDto(raw_id, raw_name, qty);
+            dto = new RawMaterialDto(raw_id, raw_name, qty, unit_price);
         }
 
         return dto;
@@ -78,10 +83,11 @@ public class RawMaterialModel {
         while (resultSet.next()) {
             String raw_id = resultSet.getString(1);
             String raw_name = resultSet.getString(2);
-            String qty = resultSet.getString(3);
+            Double qty = resultSet.getDouble(3);
+            Double unit_price = resultSet.getDouble(4);
 
 
-            var dto = new RawMaterialDto(raw_id, raw_name, qty);
+            var dto = new RawMaterialDto(raw_id, raw_name, qty, unit_price);
             dtoList.add(dto);
         }
         return dtoList;
@@ -90,7 +96,7 @@ public class RawMaterialModel {
     public boolean deleteRawMaterial(String rawMaterialId) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "DELETE FROM raw_material WHERE raw_material_id = ?";
+        String sql = "DELETE FROM raw_material WHERE rawMaterial_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setString(1, rawMaterialId);
 
@@ -109,7 +115,8 @@ public class RawMaterialModel {
             rawList.add(new RawMaterialDto(
                     resultSet.getString(1),
                     resultSet.getString(2),
-                    resultSet.getString(3)
+                    resultSet.getDouble(3),
+                    resultSet.getDouble(4)
 
             ));
         }

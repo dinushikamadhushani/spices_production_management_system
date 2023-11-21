@@ -14,6 +14,6 @@ public class EmployeeDto {
     private String email;
     private String tel;
     private String jobTitle;
-    private String salary;
+    private Double salary;
     private String date;
 }

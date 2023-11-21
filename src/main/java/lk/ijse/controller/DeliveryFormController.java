@@ -20,6 +20,7 @@ import lk.ijse.model.DeliveryModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class DeliveryFormController {
 
@@ -134,6 +135,7 @@ public class DeliveryFormController {
             if(isDeleted) {
                 tblDelivery.refresh();
                 new Alert(Alert.AlertType.CONFIRMATION, "delivery deleted!").show();
+                initialize();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -150,20 +152,97 @@ public class DeliveryFormController {
         String deliveryStatus = txtDeliveryStatus.getText();
         String tel = txtTel.getText();
 
-        var dto = new DeliveryDto(deliveryId, orderId, employeeId, location, deliveryStatus, tel);
+        boolean isValidate = validateDelivery();
+        if (isValidate) {
+            var dto = new DeliveryDto(deliveryId, orderId, employeeId, location, deliveryStatus, tel);
 
-        var model = new DeliveryModel();
-        try {
-            boolean isSaved = model.saveDelivery(dto);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "delivery saved!").show();
-                clearFields();
+            var model = new DeliveryModel();
+            try {
+                boolean isSaved = model.saveDelivery(dto);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "delivery saved!").show();
+                    clearFields();
+                    initialize();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
 
     }
+
+    private boolean validateDelivery() {
+
+        String deliveryIdText = txtDeliveryId.getText();
+
+        boolean isDeliveryIDValidation = Pattern.matches("[D][0-9]{3,}", deliveryIdText);
+
+        if (!isDeliveryIDValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID DELIVERY ID").show();
+            txtDeliveryId.setStyle("-fx-border-color: Red");
+
+        }
+
+
+        String orderIdText = txtOrderId.getText();
+
+        boolean isOrderIdValidation = Pattern.matches("[O][0-9]{3,}", orderIdText);
+
+        if (!isOrderIdValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID ORDER ID").show();
+            txtOrderId.setStyle("-fx-border-color: Red");
+
+        }
+
+        String employeeIdText = txtEmployeeId.getText();
+
+        boolean isEmployeeIdValidation = Pattern.matches("[E][0-9]{3,}", employeeIdText);
+
+        if (!isEmployeeIdValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID CUSTOMER address").show();
+            txtEmployeeId.setStyle("-fx-border-color: Red");
+
+        }
+
+        String locationText = txtLocation.getText();
+
+        boolean isLocationValidation = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", locationText);
+
+        if (!isLocationValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID LOCATION").show();
+            txtEmployeeId.setStyle("-fx-border-color: Red");
+
+        }
+
+        String deliveryStatusText = txtDeliveryStatus.getText();
+
+        boolean isDeliveryStatusValidation = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", deliveryStatusText);
+
+        if (!isDeliveryStatusValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID DELIVERY STATUS").show();
+            txtEmployeeId.setStyle("-fx-border-color: Red");
+
+        }
+
+        String telText = txtTel.getText();
+
+        boolean isCustomerTelValidation = Pattern.matches("[0-9]{10}", telText);
+
+        if (!isCustomerTelValidation) {
+
+            new Alert(Alert.AlertType.ERROR, "INVALID DELIVERY tel").show();
+            txtTel.setStyle("-fx-border-color: Red");
+            return false;
+        }
+
+        return  true;
+    }
+
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
@@ -181,7 +260,8 @@ public class DeliveryFormController {
             boolean isUpdated = model.updateDelivery(dto);
             System.out.println(isUpdated);
             if(isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "delivery updated!").show();
+                initialize();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
