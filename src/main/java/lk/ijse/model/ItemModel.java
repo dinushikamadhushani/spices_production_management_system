@@ -42,7 +42,7 @@ public class ItemModel {
         return pstm.executeUpdate() > 0;
     }
 
-    public boolean updateItem(List<CartTm> tmList) throws SQLException {
+    public static boolean updateItem(List<CartTm> tmList) throws SQLException {
         for (CartTm cartTm : tmList) {
             if(!updateQty(cartTm)) {
                 return false;
@@ -53,7 +53,7 @@ public class ItemModel {
 
 
 
-    private boolean updateQty(CartTm cartTm) throws SQLException {
+    private static boolean updateQty(CartTm cartTm) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "UPDATE item SET qty_on_hand = qty_on_hand - ? WHERE item_id = ?";

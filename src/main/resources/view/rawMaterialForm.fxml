@@ -11,16 +11,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="624.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RawMaterialFormController">
+<AnchorPane fx:id="root" prefHeight="624.0" prefWidth="948.0" style="-fx-background-color: CEDEBD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RawMaterialFormController">
    <children>
-      <Label layoutX="327.0" layoutY="40.0" text="Raw Material Manage" textFill="#2c3e50">
+      <Label layoutX="264.0" layoutY="40.0" text="Raw Material Manage" textFill="#2c3e50">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="txtRawId" layoutX="203.0" layoutY="111.0" onAction="#txtRawIdSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtQtyOnStock" layoutX="205.0" layoutY="196.0" prefHeight="33.0" prefWidth="230.0" />
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="597.0" layoutY="253.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: #2980b9;" text="Save" textFill="WHITE">
+      <TextField fx:id="txtRawId" layoutX="106.0" layoutY="111.0" onAction="#txtRawIdSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtQtyOnStock" layoutX="107.0" layoutY="196.0" prefHeight="33.0" prefWidth="230.0" />
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="520.0" layoutY="250.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -35,7 +35,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="462.0" layoutY="253.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: #e67e22;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="381.0" layoutY="251.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: blue;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -50,7 +50,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="335.0" layoutY="253.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="245.0" layoutY="253.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -65,7 +65,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="205.0" layoutY="253.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #7f8c8d;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="109.0" layoutY="253.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -80,13 +80,13 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="199.0" layoutY="542.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="107.0" layoutY="542.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField fx:id="txtRawName" layoutX="482.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblRawMaterial" layoutX="198.0" layoutY="336.0" prefHeight="200.0" prefWidth="701.0">
+      <TextField fx:id="txtRawName" layoutX="392.0" layoutY="111.0" prefHeight="33.0" prefWidth="230.0" />
+      <TableView fx:id="tblRawMaterial" layoutX="107.0" layoutY="336.0" prefHeight="200.0" prefWidth="701.0">
          <columns>
             <TableColumn fx:id="colRawId" prefWidth="141.0" text="Raw Material id" />
             <TableColumn fx:id="colMaterialName" prefWidth="174.0" text="Material Name" />
@@ -94,23 +94,23 @@
             <TableColumn fx:id="colUnitPrice" prefWidth="192.0" text="Unit price" />
          </columns>
       </TableView>
-      <Label layoutX="203.0" layoutY="90.0" text="Raw Material Id" textFill="#363232">
+      <Label layoutX="109.0" layoutY="90.0" text="Raw Material Id" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="489.0" layoutY="93.0" text="Material Name" textFill="#363232">
+      <Label layoutX="393.0" layoutY="93.0" text="Material Name" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="205.0" layoutY="178.0" text="Qty On Stock" textFill="#363232">
+      <Label layoutX="108.0" layoutY="178.0" text="Qty On Stock" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUnitPrice" layoutX="485.0" layoutY="193.0" prefHeight="33.0" prefWidth="230.0" />
-      <Label layoutX="488.0" layoutY="172.0" text="Unit price" textFill="#363232">
+      <TextField fx:id="txtUnitPrice" layoutX="395.0" layoutY="195.0" prefHeight="33.0" prefWidth="230.0" />
+      <Label layoutX="397.0" layoutY="175.0" text="Unit price" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

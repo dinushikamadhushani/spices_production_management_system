@@ -11,16 +11,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="624.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmployeeFormController">
+<AnchorPane fx:id="root" prefHeight="624.0" prefWidth="948.0" style="-fx-background-color: CEDEBD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmployeeFormController">
    <children>
       <Label layoutX="328.0" layoutY="33.0" text="Employee Manage" textFill="#2c3e50">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEmployeeId" layoutX="145.0" layoutY="101.0" onAction="#txtSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtTel" layoutX="144.0" layoutY="169.0" prefHeight="33.0" prefWidth="230.0" />
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="524.0" layoutY="276.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: #2980b9;" text="Save" textFill="WHITE">
+      <TextField fx:id="txtEmployeeId" layoutX="45.0" layoutY="101.0" onAction="#txtSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtTel" layoutX="44.0" layoutY="169.0" prefHeight="33.0" prefWidth="230.0" />
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="426.0" layoutY="275.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -35,7 +35,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="393.0" layoutY="276.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: #e67e22;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="294.0" layoutY="276.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: blue;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -50,7 +50,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="267.0" layoutY="275.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="169.0" layoutY="275.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -65,7 +65,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="143.0" layoutY="276.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #7f8c8d;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="42.0" layoutY="276.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -85,8 +85,8 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField fx:id="txtEmployeeName" layoutX="384.0" layoutY="100.0" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtJobTitle" layoutX="386.0" layoutY="171.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtEmployeeName" layoutX="324.0" layoutY="100.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtJobTitle" layoutX="322.0" layoutY="171.0" prefHeight="33.0" prefWidth="230.0" />
       <TableView fx:id="tblEmployee" layoutX="35.0" layoutY="336.0" prefHeight="200.0" prefWidth="901.0">
          <columns>
             <TableColumn fx:id="colEmployeeId" prefWidth="99.0" text="Employee id" />
@@ -98,40 +98,40 @@
             <TableColumn fx:id="colDate" prefWidth="127.0" text="Date" />
          </columns>
       </TableView>
-      <Label layoutX="151.0" layoutY="81.0" text="Employee Id" textFill="#363232">
+      <Label layoutX="46.0" layoutY="81.0" text="Employee Id" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="386.0" layoutY="80.0" text="Employee name" textFill="#363232">
+      <Label layoutX="326.0" layoutY="80.0" text="Employee name" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="147.0" layoutY="149.0" text="Tel" textFill="#363232">
+      <Label layoutX="50.0" layoutY="149.0" text="Tel" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEmail" layoutX="624.0" layoutY="103.0" prefHeight="33.0" prefWidth="230.0" />
-      <Label layoutX="389.0" layoutY="150.0" text="Job Title" textFill="#363232">
+      <TextField fx:id="txtEmail" layoutX="609.0" layoutY="103.0" prefHeight="33.0" prefWidth="230.0" />
+      <Label layoutX="327.0" layoutY="150.0" text="Job Title" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="624.0" layoutY="84.0" text="email" textFill="#363232">
+      <Label layoutX="611.0" layoutY="84.0" text="email" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSalary" layoutX="623.0" layoutY="170.0" prefHeight="33.0" prefWidth="230.0" />
-      <Label layoutX="626.0" layoutY="152.0" text="Salary" textFill="#363232">
+      <TextField fx:id="txtSalary" layoutX="610.0" layoutY="170.0" prefHeight="33.0" prefWidth="230.0" />
+      <Label layoutX="613.0" layoutY="152.0" text="Salary" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDate" layoutX="144.0" layoutY="231.0" prefHeight="33.0" prefWidth="230.0" />
-      <Label layoutX="149.0" layoutY="210.0" text="Date" textFill="#363232">
+      <TextField fx:id="txtDate" layoutX="42.0" layoutY="231.0" prefHeight="33.0" prefWidth="230.0" />
+      <Label layoutX="42.0" layoutY="214.0" text="Date" textFill="#363232">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

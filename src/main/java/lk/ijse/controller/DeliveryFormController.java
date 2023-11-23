@@ -202,32 +202,11 @@ public class DeliveryFormController {
 
         if (!isEmployeeIdValidation) {
 
-            new Alert(Alert.AlertType.ERROR, "INVALID CUSTOMER address").show();
+            new Alert(Alert.AlertType.ERROR, "INVALID EMPLOYEE ID").show();
             txtEmployeeId.setStyle("-fx-border-color: Red");
 
         }
 
-        String locationText = txtLocation.getText();
-
-        boolean isLocationValidation = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", locationText);
-
-        if (!isLocationValidation) {
-
-            new Alert(Alert.AlertType.ERROR, "INVALID LOCATION").show();
-            txtEmployeeId.setStyle("-fx-border-color: Red");
-
-        }
-
-        String deliveryStatusText = txtDeliveryStatus.getText();
-
-        boolean isDeliveryStatusValidation = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", deliveryStatusText);
-
-        if (!isDeliveryStatusValidation) {
-
-            new Alert(Alert.AlertType.ERROR, "INVALID DELIVERY STATUS").show();
-            txtEmployeeId.setStyle("-fx-border-color: Red");
-
-        }
 
         String telText = txtTel.getText();
 
@@ -235,7 +214,7 @@ public class DeliveryFormController {
 
         if (!isCustomerTelValidation) {
 
-            new Alert(Alert.AlertType.ERROR, "INVALID DELIVERY tel").show();
+            new Alert(Alert.AlertType.ERROR, "INVALID DELIVERY TEL").show();
             txtTel.setStyle("-fx-border-color: Red");
             return false;
         }

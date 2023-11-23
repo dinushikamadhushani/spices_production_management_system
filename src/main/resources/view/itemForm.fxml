@@ -10,37 +10,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="779.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ItemFormController">
+<AnchorPane fx:id="root" prefHeight="779.0" prefWidth="1244.0" style="-fx-background-color: CEDEBD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ItemFormController">
    <children>
-      <Label layoutX="416.0" layoutY="24.0" text="Item Manage">
+      <Label layoutX="321.0" layoutY="24.0" text="Item Manage">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="txtItemId" layoutX="159.0" layoutY="111.0" onAction="#itemIdSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="163.0" layoutY="91.0" text="item id" />
-      <Label layoutX="504.0" layoutY="91.0" text="item name" />
-      <TextField fx:id="txtItemName" layoutX="502.0" layoutY="111.0" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="159.0" layoutY="161.0" text="unit Price" />
-      <TextField fx:id="txtUnitPrice" layoutX="162.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
-      <Label layoutX="500.0" layoutY="161.0" text="Qty On Hand" />
-      <TextField fx:id="txtQtyOnHand" layoutX="500.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
-      <JFXButton buttonType="RAISED" layoutX="683.0" layoutY="246.0" onAction="#btnSaveOnAction" prefHeight="24.0" prefWidth="61.0" style="-fx-background-color: lightblue;" text="Save">
+      <TextField fx:id="txtItemId" layoutX="115.0" layoutY="111.0" onAction="#itemIdSearchOnAction" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="118.0" layoutY="91.0" text="item id" />
+      <Label layoutX="463.0" layoutY="91.0" text="item name" />
+      <TextField fx:id="txtItemName" layoutX="459.0" layoutY="111.0" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="119.0" layoutY="161.0" text="unit Price" />
+      <TextField fx:id="txtUnitPrice" layoutX="118.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
+      <Label layoutX="463.0" layoutY="161.0" text="Qty On Hand" />
+      <TextField fx:id="txtQtyOnHand" layoutX="462.0" layoutY="181.0" prefHeight="35.0" prefWidth="245.0" />
+      <JFXButton buttonType="RAISED" layoutX="663.0" layoutY="261.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: green;" text="Save">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="590.0" layoutY="248.0" onAction="#btnUpdateOnAction" style="-fx-background-color: lightgreen;" text="Update">
+      <JFXButton buttonType="RAISED" layoutX="545.0" layoutY="262.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: blue;" text="Update">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="506.0" layoutY="250.0" onAction="#btnClearOnAction" style="-fx-background-color: yellow;" text="Clear">
+      <JFXButton buttonType="RAISED" layoutX="422.0" layoutY="264.0" onAction="#btnClearOnAction" prefHeight="28.0" prefWidth="94.0" style="-fx-background-color: orange;" text="Clear">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="tblItem" layoutX="159.0" layoutY="346.0" prefHeight="200.0" prefWidth="777.0">
+      <TableView fx:id="tblItem" layoutX="116.0" layoutY="346.0" prefHeight="200.0" prefWidth="777.0">
          <columns>
             <TableColumn fx:id="colItemId" prefWidth="85.0" text="Item id" />
             <TableColumn fx:id="colItemName" prefWidth="229.0" text="Item name" />
@@ -50,12 +50,12 @@
             <TableColumn fx:id="colAction" prefWidth="121.66668701171875" text="Action" />
          </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="159.0" layoutY="552.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="119.0" layoutY="552.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label layoutX="163.0" layoutY="237.0" text="raw material id" />
-      <ComboBox fx:id="cmbRawMaterialId" layoutX="162.0" layoutY="262.0" onAction="#cmbRawMaterialIdOnAction" prefHeight="36.0" prefWidth="246.0" />
+      <Label layoutX="119.0" layoutY="237.0" text="raw material id" />
+      <ComboBox fx:id="cmbRawMaterialId" layoutX="119.0" layoutY="262.0" onAction="#cmbRawMaterialIdOnAction" prefHeight="36.0" prefWidth="246.0" />
    </children>
 </AnchorPane>

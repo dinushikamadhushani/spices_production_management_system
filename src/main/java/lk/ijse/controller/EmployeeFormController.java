@@ -212,9 +212,9 @@ public class EmployeeFormController {
 
         }
 
-        String emailText = txtEmail.getText();
+        String email = txtEmail.getText();
 
-        boolean isEmailValidation = Pattern.matches("[A-Za-z0-9/.\\s]{3,}", emailText);
+        boolean isEmailValidation = Pattern.matches("[a-z].*(com|lk)", email);
 
         if (!isEmailValidation) {
 
@@ -229,43 +229,23 @@ public class EmployeeFormController {
 
         if (!isCustomerTelValidation) {
 
-            new Alert(Alert.AlertType.ERROR, "INVALID CUSTOMER tel").show();
+            new Alert(Alert.AlertType.ERROR, "INVALID EMPLOYEE TEL").show();
             txtTel.setStyle("-fx-border-color: Red");
 
         }
 
-        String jobTitleText = txtJobTitle.getText();
-
-        boolean isJobTitleValidation = Pattern.matches("[0-9]{10}", jobTitleText);
-
-        if (!isJobTitleValidation) {
-
-            new Alert(Alert.AlertType.ERROR, "INVALID JOB TITLE").show();
-            txtJobTitle.setStyle("-fx-border-color: Red");
-            return false;
-        }
 
         Double salary = Double.parseDouble(txtSalary.getText());
         String salaryString = String.format("%.2f",salary);
-        boolean isSalaryValidation = Pattern.matches("[0-9]{10}", salaryString);
+        boolean isSalaryValidation = Pattern.matches("^[1-9]\\d{0,6}\\.\\d{2}$", salaryString);
 
         if (!isSalaryValidation) {
 
             new Alert(Alert.AlertType.ERROR, "INVALID SALARY").show();
             txtSalary.setStyle("-fx-border-color: Red");
-
-        }
-
-        String dateText = txtDate.getText();
-
-        boolean isDateValidation = Pattern.matches("[0-9]{10}", dateText);
-
-        if (!isDateValidation) {
-
-            new Alert(Alert.AlertType.ERROR, "INVALID DATE").show();
-            txtDate.setStyle("-fx-border-color: Red");
             return false;
         }
+
 
         return  true;
     }

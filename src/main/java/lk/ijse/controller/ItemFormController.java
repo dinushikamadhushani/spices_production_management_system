@@ -225,14 +225,14 @@ public class ItemFormController {
 
         if (!isItemNameValidation) {
 
-            new Alert(Alert.AlertType.ERROR, "INVALID ITEM name").show();
+            new Alert(Alert.AlertType.ERROR, "INVALID ITEM NAME").show();
             txtItemName.setStyle("-fx-border-color: Red");
 
         }
 
-       /* Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         String unitPriceString = String.format("%.2f",unitPrice);
-        boolean isUnitPriceValidation = Pattern.matches("[/d]", unitPriceString);
+        boolean isUnitPriceValidation = Pattern.matches("^[1-9]\\d{0,6}\\.\\d{2}$", unitPriceString);
 
         if (!isUnitPriceValidation) {
 
@@ -241,17 +241,13 @@ public class ItemFormController {
 
         }
 
-        */
-
-
-
         String qtyOnHandText = txtQtyOnHand.getText();
 
         boolean isQtyOnHandValidation = Pattern.matches("[-+]?[0-9]*\\.?[0-9]+", qtyOnHandText);
 
         if (!isQtyOnHandValidation) {
 
-            new Alert(Alert.AlertType.ERROR, "INVALID ITEM qty").show();
+            new Alert(Alert.AlertType.ERROR, "INVALID ITEM QTY").show();
             txtQtyOnHand.setStyle("-fx-border-color: Red");
             return false;
         }

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 
-<AnchorPane prefHeight="779.0" prefWidth="1244.0" style="-fx-background-color: orange;" stylesheets="@../style/stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
+<AnchorPane prefHeight="779.0" prefWidth="1244.0" style="-fx-background-color: gray;" stylesheets="@../style/stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
    <children>
       <JFXButton layoutX="36.0" layoutY="146.0" onAction="#btnproductOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Item" textFill="#141212">
          <effect>
@@ -84,6 +84,11 @@
             <Image url="@../assests/icon/icons8-home-50.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="pagingPane" layoutX="285.0" layoutY="44.0" prefHeight="624.0" prefWidth="948.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="1093.0" fitWidth="1142.0" layoutX="298.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/image/mix-organic-seeds-food-powder-high-view.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="pagingPane" layoutX="358.0" layoutY="67.0" prefHeight="636.0" prefWidth="952.0" />
    </children>
 </AnchorPane>

@@ -177,7 +177,7 @@ public class RawMaterialFormController {
 
         String rawMaterialNameText = txtRawName.getText();
 
-        boolean isRawMaterialNameValidation = Pattern.matches("[A-Za-z.]{3,}", rawMaterialNameText);
+        boolean isRawMaterialNameValidation = Pattern.matches("[A-Za-z.]{5,}", rawMaterialNameText);
 
         if (!isRawMaterialNameValidation) {
 
@@ -194,12 +194,12 @@ public class RawMaterialFormController {
 
             new Alert(Alert.AlertType.ERROR, "INVALID QTY").show();
             txtQtyOnStock.setStyle("-fx-border-color: Red");
-            return false;
+
         }
 
-      /*  Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         String unitPriceString = String.format("%.2f",unitPrice);
-        boolean isUnitPriceValidation = Pattern.matches("[A-Za-z.]{3,}", unitPriceString);
+        boolean isUnitPriceValidation = Pattern.matches("^[1-9]\\d{0,6}\\.\\d{2}$", unitPriceString);
 
         if (!isUnitPriceValidation) {
 
@@ -207,12 +207,6 @@ public class RawMaterialFormController {
             txtUnitPrice.setStyle("-fx-border-color: Red");
             return false;
         }
-
-       */
-
-
-
-
 
         return true;
     }

@@ -127,11 +127,11 @@ public class SupplierFormController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-        String id = txtSupId.getText();
+        String supplierId = txtSupId.getText();
 
         var supplierModel = new SupplierModel();
         try {
-            boolean isDeleted = supplierModel.deleteSupplier(id);
+            boolean isDeleted = supplierModel.deleteSupplier(supplierId);
 
             if(isDeleted) {
                 tblSupplier.refresh();
@@ -175,7 +175,7 @@ public class SupplierFormController {
 
         String idText = txtSupId.getText();
 
-        boolean isCustomerIDValidation = Pattern.matches("[C][0-9]{3,}", idText);
+        boolean isCustomerIDValidation = Pattern.matches("[S][0-9]{3,}", idText);
 
         if (!isCustomerIDValidation) {
 
@@ -191,7 +191,7 @@ public class SupplierFormController {
 
         if (!isSupplierNameValidation) {
 
-            new Alert(Alert.AlertType.ERROR, "INVALID SUPPLIER name").show();
+            new Alert(Alert.AlertType.ERROR, "INVALID SUPPLIER NAME").show();
             txtSupName.setStyle("-fx-border-color: Red");
 
         }
@@ -202,7 +202,7 @@ public class SupplierFormController {
 
         if (!isCustomerAddressValidation) {
 
-            new Alert(Alert.AlertType.ERROR, "INVALID SUPPLIER address").show();
+            new Alert(Alert.AlertType.ERROR, "INVALID SUPPLIER ADDRESS").show();
             txtSupAddress.setStyle("-fx-border-color: Red");
 
         }
@@ -213,7 +213,7 @@ public class SupplierFormController {
 
         if (!isCustomerTelValidation) {
 
-            new Alert(Alert.AlertType.ERROR, "INVALID SUPPLIER tel").show();
+            new Alert(Alert.AlertType.ERROR, "INVALID SUPPLIER TEL").show();
             txtSupTel.setStyle("-fx-border-color: Red");
             return false;
         }

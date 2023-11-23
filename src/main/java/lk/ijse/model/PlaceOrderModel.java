@@ -21,15 +21,15 @@ public class PlaceOrderModel {
 
             boolean isOrderSaved = OrderModel.saveOrder(pDto.getOrderId(), pDto.getCustomerId(), pDto.getDate());
             if (isOrderSaved) {
-               // boolean isUpdated = itemModel.updateItem(pDto.getTmList());
-              //  if(isUpdated) {
+                boolean isUpdated = ItemModel.updateItem(pDto.getTmList());
+                if(isUpdated) {
                     boolean isOrderDetailSaved = orderDetailModel.saveOrderDetail(pDto.getOrderId(), pDto.getTmList());
                     if(isOrderDetailSaved) {
                         connection.commit();
                         result = true;
                     }
                 }
-           // }
+            }
         } catch (SQLException e) {
             connection.rollback();
             throw e;
