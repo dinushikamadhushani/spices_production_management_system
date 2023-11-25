@@ -89,6 +89,7 @@
             <Image url="@../assests/image/mix-organic-seeds-food-powder-high-view.jpg" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="pagingPane" layoutX="358.0" layoutY="67.0" prefHeight="636.0" prefWidth="952.0" />
+      <AnchorPane fx:id="pagingPane" layoutX="320.0" layoutY="33.0" prefHeight="724.0" prefWidth="1082.0" />
+      <JFXButton layoutX="28.0" layoutY="454.0" onAction="#btnmaterialDetailOnAction" prefHeight="38.0" prefWidth="222.0" style="-fx-background-color: white;" styleClass="dasboardbtn" text="Material Detail" />
    </children>
 </AnchorPane>

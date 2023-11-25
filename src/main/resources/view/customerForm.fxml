@@ -11,16 +11,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="624.0" prefWidth="948.0" style="-fx-background-color: CEDEBD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
+<AnchorPane fx:id="root" prefHeight="724.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
    <children>
-      <Label layoutX="352.0" layoutY="40.0" text="Customer Manage" textFill="#2c3e50">
+      <Label layoutX="6.0" layoutY="7.0" text="Customer Manage" textFill="#2c3e50">
          <font>
-            <Font name="System Bold" size="19.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="170.0" layoutY="111.0" onAction="#txtSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtAddress" layoutX="171.0" layoutY="194.0" prefHeight="33.0" prefWidth="230.0" />
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="587.0" layoutY="256.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
+      <TextField fx:id="txtId" layoutX="4.0" layoutY="80.0" onAction="#txtSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtAddress" layoutX="3.0" layoutY="147.0" prefHeight="33.0" prefWidth="230.0" />
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="391.0" layoutY="191.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -35,7 +35,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="442.0" layoutY="257.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: blue;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="263.0" layoutY="192.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: blue;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -50,7 +50,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="311.0" layoutY="257.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="137.0" layoutY="193.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -65,7 +65,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="177.0" layoutY="256.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="11.0" layoutY="193.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -80,39 +80,39 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="181.0" layoutY="521.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="597.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField fx:id="txtName" layoutX="488.0" layoutY="115.0" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtTel" layoutX="493.0" layoutY="190.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblCustomer" layoutX="179.0" layoutY="314.0" prefHeight="200.0" prefWidth="535.0">
+      <TextField fx:id="txtName" layoutX="270.0" layoutY="79.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtTel" layoutX="270.0" layoutY="146.0" prefHeight="33.0" prefWidth="230.0" />
+      <TableView fx:id="tblCustomer" layoutX="5.0" layoutY="254.0" prefHeight="336.0" prefWidth="982.0">
          <columns>
-            <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
-            <TableColumn fx:id="colName" prefWidth="142.0" text="Name" />
-            <TableColumn fx:id="colAddress" prefWidth="190.0" text="Address" />
-            <TableColumn fx:id="colTel" prefWidth="127.0" text="Tel" />
+            <TableColumn fx:id="colId" prefWidth="185.0" text="Id" />
+            <TableColumn fx:id="colName" prefWidth="326.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="228.0" text="Address" />
+            <TableColumn fx:id="colTel" prefWidth="242.0" text="Tel" />
          </columns>
       </TableView>
-      <Label layoutX="173.0" layoutY="93.0" text="Customer Id" textFill="#363232">
+      <Label layoutX="8.0" layoutY="58.0" text="Customer Id" textFill="#200cd7">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="489.0" layoutY="93.0" text="Customer Name" textFill="#363232">
+      <Label layoutX="269.0" layoutY="57.0" text="Customer Name" textFill="#c60a20">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="169.0" layoutY="178.0" text="Customer Address" textFill="#363232">
+      <Label layoutX="5.0" layoutY="126.0" text="Customer Address" textFill="#280dd7">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="491.0" layoutY="166.0" text="Customer Tel" textFill="#363232">
+      <Label layoutX="271.0" layoutY="125.0" text="Customer Tel" textFill="#1808c6">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
    </children>

@@ -3,6 +3,8 @@ package lk.ijse.model;
 import lk.ijse.db.DbConnection;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.RawMaterialDto;
+import lk.ijse.dto.tm.CartTm;
+import lk.ijse.dto.tm.MaterialCartTm;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -45,6 +47,7 @@ public class RawMaterialModel {
 
         return pstm.executeUpdate() > 0;
     }
+
 
     public RawMaterialDto searchRawMaterial(String rawMaterialId) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();

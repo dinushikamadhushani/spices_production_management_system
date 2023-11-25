@@ -85,6 +85,13 @@ public class DashboardFormController {
 
     }
 
+    @FXML
+    void btnmaterialDetailOnAction(ActionEvent event) throws IOException {
+        Navigation.ChangePane(pagingPane,"materialDetailForm.fxml");
+
+    }
+
+
 
 
 

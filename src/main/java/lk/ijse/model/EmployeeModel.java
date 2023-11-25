@@ -109,7 +109,7 @@ public class EmployeeModel {
         return pstm.executeUpdate() > 0;
     }
 
-    public List<EmployeeDto> loadAllEmployee() throws SQLException {
+    public static List<EmployeeDto> loadAllEmployee() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM employee";

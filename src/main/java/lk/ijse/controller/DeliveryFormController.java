@@ -6,16 +6,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.dto.DeliveryDto;
+import lk.ijse.dto.EmployeeDto;
+import lk.ijse.dto.PlaceOrderDto;
+import lk.ijse.dto.RawMaterialDto;
 import lk.ijse.dto.tm.DeliveryTm;
-import lk.ijse.model.DeliveryModel;
+import lk.ijse.model.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -55,7 +55,10 @@ public class DeliveryFormController {
     private TextField txtDeliveryStatus;
 
     @FXML
-    private TextField txtEmployeeId;
+    private ComboBox<String> cmbEmployeeId;
+
+    @FXML
+    private ComboBox<String> cmbOrderId;
 
     @FXML
     private TextField txtLocation;
@@ -66,9 +69,13 @@ public class DeliveryFormController {
     @FXML
     private TextField txtTel;
 
+    private final EmployeeModel employeeModel = new EmployeeModel();
+
     public void initialize() {
         setCellValueFactory();
         loadAllDelivery();
+        loadEmployeessIds();
+
     }
     private void setCellValueFactory() {
         colDeliveryId.setCellValueFactory(new PropertyValueFactory<>("deliveryId"));
@@ -105,6 +112,22 @@ public class DeliveryFormController {
             throw new RuntimeException(e);
         }
     }
+
+    private void loadEmployeessIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<EmployeeDto> empList = EmployeeModel.loadAllEmployee();
+
+            for (EmployeeDto dto : empList) {
+                obList.add(dto.getId());
+            }
+            cmbEmployeeId.setItems(obList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 
 
     @FXML
@@ -147,7 +170,7 @@ public class DeliveryFormController {
     void btnSaveOnAction(ActionEvent event) {
         String deliveryId = txtDeliveryId.getText();
         String orderId = txtOrderId.getText();
-        String employeeId = txtEmployeeId.getText();
+        String employeeId = cmbEmployeeId.getValue();
         String location = txtLocation.getText();
         String deliveryStatus = txtDeliveryStatus.getText();
         String tel = txtTel.getText();
@@ -196,14 +219,14 @@ public class DeliveryFormController {
 
         }
 
-        String employeeIdText = txtEmployeeId.getText();
+        String employeeIdText = cmbEmployeeId.getValue();
 
         boolean isEmployeeIdValidation = Pattern.matches("[E][0-9]{3,}", employeeIdText);
 
         if (!isEmployeeIdValidation) {
 
             new Alert(Alert.AlertType.ERROR, "INVALID EMPLOYEE ID").show();
-            txtEmployeeId.setStyle("-fx-border-color: Red");
+            cmbEmployeeId.setStyle("-fx-border-color: Red");
 
         }
 
@@ -227,7 +250,7 @@ public class DeliveryFormController {
     void btnUpdateOnAction(ActionEvent event) {
         String deliveryId = txtDeliveryId.getText();
         String orderId = txtOrderId.getText();
-        String employeeId = txtEmployeeId.getText();
+        String employeeId = cmbEmployeeId.getValue();
         String location = txtLocation.getText();
         String deliveryStatus = txtDeliveryStatus.getText();
         String tel = txtTel.getText();
@@ -269,7 +292,7 @@ public class DeliveryFormController {
     private void fillFields(DeliveryDto dto) {
         txtDeliveryId.setText(dto.getDeliveryId());
         txtOrderId.setText(dto.getOrderId());
-        txtEmployeeId.setText(dto.getEmployeeId());
+        cmbEmployeeId.setValue(dto.getEmployeeId());
         txtLocation.setText(dto.getLocation());
         txtDeliveryStatus.setText(dto.getDeliveryStatus());
         txtTel.setText(dto.getTel());
@@ -277,11 +300,22 @@ public class DeliveryFormController {
     void clearFields() {
         txtDeliveryId.setText("");
         txtOrderId.setText("");
-        txtEmployeeId.setText("");
+        cmbEmployeeId.setValue("");
         txtLocation.setText("");
         txtDeliveryStatus.setText("");
         txtTel.setText("");
     }
+
+    @FXML
+    void cmbEmployeeIdOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cmbOrderIdOnAction(ActionEvent event) {
+
+    }
+
 
 
 }
