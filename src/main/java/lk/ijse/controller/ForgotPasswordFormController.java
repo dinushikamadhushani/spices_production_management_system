@@ -1,38 +1,84 @@
 package lk.ijse.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.PasswordField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import lk.ijse.dto.UserDto;
 import lk.ijse.model.UserModel;
 import lk.ijse.util.Navigation;
 
+import javax.mail.MessagingException;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Random;
 
 public class ForgotPasswordFormController {
 
     @FXML
+    private TextField txtuserName;
+
+    @FXML
+    private JFXButton btnreset;
+
+
+    static String username;
+    static int otp;
+
+    @FXML
     private AnchorPane pane;
 
-    @FXML
-    private TextField txtemail;
+
+    private Stage stage;
+
+
 
     @FXML
-    private PasswordField txtnewpassword;
+    void btnResetpasswordOnAction(ActionEvent event) throws MessagingException, SQLException, IOException {
+        username = txtuserName.getText();
 
-    @FXML
-    private TextField txtusername;
+        System.out.println(username);
+        UserModel userModel = new UserModel();
+        Random random = new Random();
+        otp = random.nextInt(9000);
+        otp += 1000;
 
-    @FXML
-    void btnResetpasswordOnAction(ActionEvent event) throws IOException{
+        try {
 
-                Navigation.switchNavigation("loginPageForm.fxml", event);
+            UserDto user = userModel.getEmail(username);
+            System.out.println(user.getEmail());
 
+            EmailController.sendEmail(user.getEmail(), "cafe au lait verification", otp + "");
 
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/otpForm.fxml"));
+            Scene scene = new Scene(rootNode);
+            Stage stage1 = new Stage();
+            stage1.setScene(scene);
+            stage1.centerOnScreen();
+            stage1.setResizable(false);
+            stage1.show();
 
     }
 
+
+
+
+    @FXML
+    void btnBackOnAction(ActionEvent event) {
+
+
+    }
 
 
 }

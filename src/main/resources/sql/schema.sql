@@ -25,6 +25,7 @@ DESC employee;
 CREATE TABLE user(
                      user_id VARCHAR(20) PRIMARY KEY,
                      user_name VARCHAR(25) NOT NULL,
+                     email VARCHAR(30),
                      password VARCHAR(20) NOT NULL,
                      employee_id VARCHAR(20) NOT NULL,
                      FOREIGN KEY(employee_id) REFERENCES employee(employee_id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -151,7 +152,7 @@ DESC supplier_detail;
 
 INSERT INTO employee VALUES('E001', 'Meri', 'meri@gmail.com', 11112233,'Manager',50000.00 ,'2023-10-5');
 
-INSERT INTO user VALUES ('U001','Meri','1111','E001');
+INSERT INTO user VALUES ('U001','Meri','nadeesamaraweera2000@gmail.com','1111','E001');
 
 
 

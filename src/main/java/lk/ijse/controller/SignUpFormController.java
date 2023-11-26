@@ -32,7 +32,7 @@ public class SignUpFormController {
     @FXML
     private TextField txtcreatepassword;
 
-    @FXML
+   /* @FXML
     void btnSignupOnAction(ActionEvent event) throws IOException {
        if (UserModel.createaccount(txtemail.getText(),txtcreatepassword.getText(), txtconfirmpassword.getText())) {
            try {
@@ -42,6 +42,8 @@ public class SignUpFormController {
            }
        }
     }
+
+    */
 
     @FXML
     void hypLoginOnAction(ActionEvent event) throws IOException {
