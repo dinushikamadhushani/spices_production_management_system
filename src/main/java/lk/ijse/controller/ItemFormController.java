@@ -139,7 +139,7 @@ public class ItemFormController {
     private void loadRawMaterialsIds() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
-            List<RawMaterialDto> rawList = RawMaterialModel.loadAllMaterials();
+            List<RawMaterialDto> rawList = RawMaterialModel.loadAllRawMaterials();
 
             for (RawMaterialDto dto : rawList) {
                 obList.add(dto.getRawMaterialId());

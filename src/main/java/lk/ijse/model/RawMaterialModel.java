@@ -106,7 +106,7 @@ public class RawMaterialModel {
         return pstm.executeUpdate() > 0;
     }
 
-    public static List<RawMaterialDto> loadAllMaterials() throws SQLException {
+    public static List<RawMaterialDto> loadAllRawMaterials() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "SELECT * FROM raw_material";
@@ -124,6 +124,28 @@ public class RawMaterialModel {
             ));
         }
         return rawList;
+    }
+
+    public static boolean updateRawMaterial(List<MaterialCartTm> tmList) throws SQLException {
+        for (MaterialCartTm materialCartTm : tmList) {
+            if(!updateQty(materialCartTm)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+    private static boolean updateQty(MaterialCartTm materialCartTm) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "UPDATE raw_material SET qty_on_stock = qty_on_stock + ? WHERE rawMaterial_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setInt(1, materialCartTm.getQty());
+        pstm.setString(2, materialCartTm.getRawMaterialId());
+
+        return pstm.executeUpdate() > 0; //true
     }
 
 }

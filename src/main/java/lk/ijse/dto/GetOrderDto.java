@@ -16,6 +16,7 @@ import java.util.List;
 
 public class GetOrderDto {
     private String supplierId;
+    private String  rawMaterialId;
     private LocalDate date;
     private List<MaterialCartTm> tmList = new ArrayList<>();
 
