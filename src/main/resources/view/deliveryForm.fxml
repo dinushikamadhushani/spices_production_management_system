@@ -7,79 +7,49 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" prefHeight="724.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DeliveryFormController">
    <children>
-      <Label layoutX="22.0" layoutY="8.0" text="Delivery Manage" textFill="#2c3e50">
+      <Label layoutX="19.0" layoutY="4.0" text="Delivery Manage" textFill="#b91705">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
       <TextField fx:id="txtDeliveryId" layoutX="20.0" layoutY="75.0" onAction="#txtDeliveryIdSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
       <TextField fx:id="txtLocation" layoutX="20.0" layoutY="142.0" prefHeight="33.0" prefWidth="230.0" />
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="408.0" layoutY="189.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="744.0" layoutY="78.0" onAction="#btnSaveOnAction" prefHeight="20.0" prefWidth="113.0" style="-fx-background-color: green;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Desktop/thogakade-mvc6/src/main/resources/icon/save.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="276.0" layoutY="188.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: blue;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="880.0" layoutY="79.0" onAction="#btnUpdateOnAction" prefHeight="20.0" prefWidth="113.0" style="-fx-background-color: blue;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Desktop/thogakade-mvc6/src/main/resources/icon/update.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="150.0" layoutY="187.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="745.0" layoutY="145.0" onAction="#btnDeleteOnAction" prefHeight="20.0" prefWidth="113.0" style="-fx-background-color: #e74c3c;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Desktop/thogakade-mvc6/src/main/resources/icon/delete.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="26.0" layoutY="186.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="880.0" layoutY="147.0" onAction="#btnClearOnAction" prefHeight="20.0" prefWidth="113.0" style="-fx-background-color: orange;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Desktop/thogakade-mvc6/src/main/resources/icon/clear.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
       <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="590.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
@@ -87,7 +57,7 @@
          </cursor>
       </JFXButton>
       <TextField fx:id="txtDeliveryStatus" layoutX="260.0" layoutY="142.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblDelivery" layoutX="20.0" layoutY="246.0" prefHeight="336.0" prefWidth="982.0">
+      <TableView fx:id="tblDelivery" layoutX="20.0" layoutY="204.0" prefHeight="378.0" prefWidth="982.0">
          <columns>
             <TableColumn fx:id="colDeliveryId" prefWidth="105.0" text="Delivery id" />
             <TableColumn fx:id="colOrderId" prefWidth="180.0" text="Order id" />
@@ -99,36 +69,36 @@
       </TableView>
       <Label layoutX="23.0" layoutY="52.0" text="Delivery Id" textFill="#363232">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="263.0" layoutY="57.0" text="Order Id" textFill="#363232">
+      <Label layoutX="263.0" layoutY="54.0" text="Order Id" textFill="#363232">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
       <Label layoutX="22.0" layoutY="120.0" text="Location" textFill="#363232">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
       <TextField fx:id="txtTel" layoutX="506.0" layoutY="142.0" prefHeight="33.0" prefWidth="230.0" />
-      <Label layoutX="266.0" layoutY="124.0" text="Delivery status" textFill="#363232">
+      <Label layoutX="261.0" layoutY="122.0" text="Delivery status" textFill="#363232">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="506.0" layoutY="125.0" text="Tel" textFill="#363232">
+      <Label layoutX="505.0" layoutY="122.0" text="Tel" textFill="#363232">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="502.0" layoutY="55.0" text="Employee Id" textFill="#363232">
+      <Label layoutX="502.0" layoutY="54.0" text="Employee Id" textFill="#363232">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbEmployeeId" layoutX="502.0" layoutY="76.0" onAction="#cmbEmployeeIdOnAction" prefHeight="30.0" prefWidth="230.0" />
+      <ComboBox fx:id="cmbEmployeeId" layoutX="502.0" layoutY="76.0" onAction="#cmbEmployeeIdOnAction" prefHeight="30.0" prefWidth="230.0" stylesheets="@../style/stylesheet.css" />
       <TextField fx:id="txtOrderId" layoutX="263.0" layoutY="75.0" prefHeight="33.0" prefWidth="228.0" />
    </children>
 </AnchorPane>

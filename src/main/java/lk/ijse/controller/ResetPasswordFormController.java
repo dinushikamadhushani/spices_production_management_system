@@ -3,6 +3,7 @@ package lk.ijse.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import lk.ijse.model.UserModel;
@@ -39,11 +40,14 @@ public class ResetPasswordFormController {
             boolean isUpdated = userModel.updatePassword(ForgotPasswordFormController.username, txtPassword.getText());
             if (isUpdated) {
                 System.out.println("OK");
+                new Alert(Alert.AlertType.CONFIRMATION, "OK!").show();
             } else {
                 System.out.println("WRONG");
+
             }
         }else {
             System.out.println("CONFIRMATION NOT MATCHED!");
+            new Alert(Alert.AlertType.ERROR,"CONFIRMATION NOT MATCHED!").show();
         }
     }
     public void initialize(){

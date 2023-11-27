@@ -6,113 +6,83 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" prefHeight="724.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
    <children>
-      <Label layoutX="6.0" layoutY="7.0" text="Customer Manage" textFill="#2c3e50">
+      <Label layoutX="6.0" layoutY="3.0" text="Customer Manage" textFill="#ba310d">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="4.0" layoutY="80.0" onAction="#txtSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtAddress" layoutX="3.0" layoutY="147.0" prefHeight="33.0" prefWidth="230.0" />
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="391.0" layoutY="191.0" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="94.0" style="-fx-background-color: green;" text="Save" textFill="WHITE">
+      <TextField fx:id="txtId" layoutX="4.0" layoutY="68.0" onAction="#txtSearchOnAction" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtAddress" layoutX="3.0" layoutY="130.0" prefHeight="33.0" prefWidth="230.0" />
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="515.0" layoutY="67.0" onAction="#btnSaveOnAction" prefHeight="20.0" prefWidth="113.0" style="-fx-background-color: green;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Desktop/thogakade-mvc6/src/main/resources/icon/save.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="263.0" layoutY="192.0" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="111.0" style="-fx-background-color: blue;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="667.0" layoutY="66.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: blue;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Desktop/thogakade-mvc6/src/main/resources/icon/update.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="137.0" layoutY="193.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="516.0" layoutY="123.0" onAction="#btnDeleteOnAction" prefHeight="18.0" prefWidth="113.0" style="-fx-background-color: #e74c3c;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Desktop/thogakade-mvc6/src/main/resources/icon/delete.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="11.0" layoutY="193.0" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="667.0" layoutY="121.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: orange;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../Desktop/thogakade-mvc6/src/main/resources/icon/clear.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="597.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="5.0" layoutY="597.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TextField fx:id="txtName" layoutX="270.0" layoutY="79.0" prefHeight="33.0" prefWidth="230.0" />
-      <TextField fx:id="txtTel" layoutX="270.0" layoutY="146.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblCustomer" layoutX="5.0" layoutY="254.0" prefHeight="336.0" prefWidth="982.0">
+      <TextField fx:id="txtName" layoutX="263.0" layoutY="68.0" prefHeight="33.0" prefWidth="230.0" />
+      <TextField fx:id="txtTel" layoutX="263.0" layoutY="131.0" prefHeight="33.0" prefWidth="230.0" />
+      <TableView fx:id="tblCustomer" layoutX="5.0" layoutY="175.0" prefHeight="415.0" prefWidth="936.0">
          <columns>
             <TableColumn fx:id="colId" prefWidth="185.0" text="Id" />
             <TableColumn fx:id="colName" prefWidth="326.0" text="Name" />
             <TableColumn fx:id="colAddress" prefWidth="228.0" text="Address" />
-            <TableColumn fx:id="colTel" prefWidth="242.0" text="Tel" />
+            <TableColumn fx:id="colTel" prefWidth="196.0" text="Tel" />
          </columns>
       </TableView>
-      <Label layoutX="8.0" layoutY="58.0" text="Customer Id" textFill="#200cd7">
+      <Label layoutX="8.0" layoutY="49.0" text="Customer Id" textFill="#171717">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="269.0" layoutY="57.0" text="Customer Name" textFill="#c60a20">
+      <Label layoutX="264.0" layoutY="47.0" text="Customer Name" textFill="#141314">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="5.0" layoutY="126.0" text="Customer Address" textFill="#280dd7">
+      <Label layoutX="5.0" layoutY="109.0" text="Customer Address" textFill="#1a191b">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="271.0" layoutY="125.0" text="Customer Tel" textFill="#1808c6">
+      <Label layoutX="264.0" layoutY="108.0" text="Customer Tel" textFill="#131314">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="17.0" />
          </font>
       </Label>
    </children>

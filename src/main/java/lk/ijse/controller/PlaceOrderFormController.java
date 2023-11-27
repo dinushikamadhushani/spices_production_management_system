@@ -296,7 +296,7 @@ public class PlaceOrderFormController {
 
     @FXML
     void btnBackOnAction(ActionEvent event) throws IOException {
-        Parent anchorPane = FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"));
+        Parent anchorPane = FXMLLoader.load(getClass().getResource("/view/dashboardForm.fxml"));
         Stage stage = (Stage) root.getScene().getWindow();
 
         stage.setScene(new Scene(anchorPane));

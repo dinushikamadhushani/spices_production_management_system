@@ -38,7 +38,7 @@ public class OtpFormController {
             btnVerify.getScene().getWindow().hide();
             Navigation.switchNavigation("resetPasswordForm.fxml",event);
         }else{
-            new Alert(Alert.AlertType.ERROR,"OTP WRONG");
+            new Alert(Alert.AlertType.ERROR,"OTP WRONG").show();
         }
     }
     public void initialize(){

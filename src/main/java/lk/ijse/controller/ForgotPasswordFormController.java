@@ -75,7 +75,13 @@ public class ForgotPasswordFormController {
 
 
     @FXML
-    void btnBackOnAction(ActionEvent event) {
+    void btnBackOnAction(ActionEvent event) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/loginPageForm.fxml"));
+        Stage stage = (Stage) pane.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("Dashboard");
+        stage.centerOnScreen();
 
 
     }
