@@ -35,6 +35,7 @@ import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -305,10 +306,13 @@ public class PlaceOrderFormController {
     }
 
     public void btnPrintOnAction(ActionEvent actionEvent) {
-        InputStream resource = this.getClass().getResourceAsStream("/reports/Detail.jrxml");
+        InputStream resource = this.getClass().getResourceAsStream("/reports/Blank_A4.jrxml");
         try {
             JasperReport jasperReport = JasperCompileManager.compileReport(resource);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DbConnection.getInstance().getConnection());
+            HashMap map = new HashMap<>();
+            map.put("orderId",lblOrderId.getText());
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, map, DbConnection.getInstance().getConnection());
             JasperViewer.viewReport(jasperPrint, false);
         } catch (Exception e) {
             e.printStackTrace();

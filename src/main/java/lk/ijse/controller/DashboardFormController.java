@@ -1,18 +1,43 @@
 package lk.ijse.controller;
 
+import javafx.animation.KeyFrame;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.util.DateTimeUtil;
 import lk.ijse.util.Navigation;
-
-
+import javafx.animation.Animation;
+import javafx.animation.Timeline;
+import javafx.scene.control.Label;
+import javafx.util.Duration;
 import java.io.IOException;
+import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 
-public class DashboardFormController {
+import static lk.ijse.util.DateTimeUtil.timeNow;
+
+
+import java.awt.*;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import static lk.ijse.util.DateTimeUtil.timeNow;
+
+public class DashboardFormController implements Initializable {
 
     @FXML
     private AnchorPane pagingPane;
+
+    @FXML
+    private Label txtDate;
+
+    @FXML
+    private Label txtTime;
 
     @FXML
     void btncustomerOnAction(ActionEvent event) throws IOException {
@@ -91,9 +116,29 @@ public class DashboardFormController {
 
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        txtDate.setText(DateTimeUtil.dateNow());
+        // txtTime.setText(timeNow());
+        loadTime();
+    }
+
+    private void loadTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss");
+        txtDate.setText(LocalDate.now().toString());
+        Timeline timeline = new Timeline(new KeyFrame(javafx.util.Duration.ZERO, e -> {
+
+            txtTime.setText(timeNow());
+            // lblTime.setText(LocalDateTime.now().format(formatter));
+
+        }),
+                new KeyFrame(Duration.seconds(1)));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
 
 
-
+    }
 
 
 }

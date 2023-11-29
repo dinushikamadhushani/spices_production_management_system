@@ -61,7 +61,7 @@
             <Font size="15.0" />
          </font>
       </JFXButton>
-      <TableView fx:id="tblItem" layoutX="16.0" layoutY="253.0" prefHeight="353.0" prefWidth="982.0">
+      <TableView fx:id="tblItem" layoutX="16.0" layoutY="253.0" prefHeight="339.0" prefWidth="982.0">
          <columns>
             <TableColumn fx:id="colItemId" prefWidth="138.33333587646484" text="Item id" />
             <TableColumn fx:id="colItemName" prefWidth="209.66666412353516" text="Item name" />
@@ -71,7 +71,7 @@
             <TableColumn fx:id="colAction" prefWidth="158.0" text="Action" />
          </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="614.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="16.0" layoutY="596.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

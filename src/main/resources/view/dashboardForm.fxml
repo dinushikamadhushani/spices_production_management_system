@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="779.0" prefWidth="1244.0" style="-fx-background-color: black;" stylesheets="@../style/stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
    <children>
@@ -84,12 +86,27 @@
             <Image url="@../assests/icon/icons8-home-50.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="784.0" fitWidth="1146.0" layoutX="294.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <JFXButton layoutX="32.0" layoutY="491.0" onAction="#btnmaterialDetailOnAction" prefHeight="38.0" prefWidth="222.0" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Material Details" />
+      <ImageView fitHeight="28.0" fitWidth="33.0" layoutX="40.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assests/image/mix-organic-seeds-food-powder-high-view.jpg" />
+            <Image url="@../assests/image/icons8-detail-24.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="pagingPane" layoutX="300.0" layoutY="7.0" prefHeight="766.0" prefWidth="1134.0" />
-      <JFXButton layoutX="32.0" layoutY="515.0" onAction="#btnmaterialDetailOnAction" prefHeight="38.0" prefWidth="222.0" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Material Detail" />
+      <ImageView fitHeight="802.0" fitWidth="1141.0" layoutX="298.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/image/spices-herbs.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="pagingPane" layoutX="314.0" layoutY="63.0" prefHeight="688.0" prefWidth="1100.0" />
+      <Label fx:id="txtTime" layoutX="1232.0" layoutY="15.0" prefHeight="28.0" prefWidth="142.0" text="Time">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="txtDate" layoutX="1059.0" layoutY="14.0" prefHeight="30.0" prefWidth="141.0" text="Date">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

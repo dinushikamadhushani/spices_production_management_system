@@ -39,13 +39,13 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="98.0" layoutY="144.0" text="Customer Id:">
+      <Label layoutX="98.0" layoutY="144.0" text="Customer Id:" textFill="#f8f3f3">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
       <JFXComboBox fx:id="cmbCustomerId" layoutX="223.0" layoutY="127.0" onAction="#cmbCustomerOnAction" prefHeight="33.0" prefWidth="203.0" />
-      <Label layoutX="558.0" layoutY="141.0" text="Customer Name:">
+      <Label layoutX="558.0" layoutY="141.0" text="Customer Name:" textFill="#fcf7f7">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -55,13 +55,13 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="98.0" layoutY="198.0" text="Item id:">
+      <Label layoutX="98.0" layoutY="198.0" text="Item id:" textFill="#f8f5f5">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
       <JFXComboBox fx:id="cmbItemId" layoutX="98.0" layoutY="226.0" onAction="#cmbItemOnAction" prefHeight="33.0" prefWidth="183.0" />
-      <Label layoutX="347.0" layoutY="202.0" text="Item Name:">
+      <Label layoutX="347.0" layoutY="202.0" text="Item Name:" textFill="#fcf3f3">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -71,7 +71,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="510.0" layoutY="201.0" text="Unit Price:">
+      <Label layoutX="510.0" layoutY="201.0" text="Unit Price:" textFill="#fcf5f5">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -81,7 +81,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="627.0" layoutY="201.0" text="Qty. On Hand:">
+      <Label layoutX="627.0" layoutY="201.0" text="Qty. On Hand:" textFill="#f5f3f3">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -91,13 +91,13 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="781.0" layoutY="201.0" text="Qty:">
+      <Label layoutX="781.0" layoutY="201.0" text="Qty:" textFill="#f2eeee">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
       <TextField fx:id="txtQty" layoutX="767.0" layoutY="223.0" onAction="#txtQtyOnAction" prefHeight="33.0" prefWidth="66.0" />
-      <TableView fx:id="tblOrderCart" layoutX="22.0" layoutY="282.0" prefHeight="300.0" prefWidth="982.0">
+      <TableView fx:id="tblOrderCart" layoutX="22.0" layoutY="276.0" prefHeight="266.0" prefWidth="982.0">
          <columns>
             <TableColumn fx:id="colItemId" prefWidth="141.0" text="Item id" />
             <TableColumn fx:id="colItemName" prefWidth="171.0" text="Item name" />
@@ -107,17 +107,17 @@
             <TableColumn fx:id="colAction" prefWidth="169.0" text="Action" />
          </columns>
       </TableView>
-      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="872.0" layoutY="222.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: green;" text="Add to cart" textFill="WHITE">
+      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="872.0" layoutY="222.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: green;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Add to cart" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="670.0" layoutY="596.0" onAction="#btnPlaceOrderOnAction" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: green;" text="Place Order" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="670.0" layoutY="546.0" onAction="#btnPlaceOrderOnAction" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: green;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Place Order" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="435.0" layoutY="140.0" onAction="#btnNewCustomerOnAction" prefHeight="21.0" prefWidth="74.0" style="-fx-background-color: green;" text="NEW" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="434.0" layoutY="140.0" onAction="#btnNewCustomerOnAction" prefHeight="29.0" prefWidth="87.0" style="-fx-background-color: green;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="NEW" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="17.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -129,22 +129,22 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="940.0" layoutY="595.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="66.0" style="-fx-background-color: #bdc3c7;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="940.0" layoutY="545.0" onAction="#btnBackOnAction" prefHeight="33.0" prefWidth="66.0" style="-fx-background-color: #bdc3c7;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label fx:id="lblNetTotal" layoutX="124.0" layoutY="594.0" prefHeight="26.0" prefWidth="141.0" textFill="#b51313">
+      <Label fx:id="lblNetTotal" layoutX="126.0" layoutY="546.0" prefHeight="26.0" prefWidth="141.0" textFill="#b51313">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="594.0" text="Net Total:">
+      <Label layoutX="26.0" layoutY="546.0" text="Net Total:">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="804.0" layoutY="596.0" onAction="#btnPrintOnAction" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: green;" text="Print" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="804.0" layoutY="546.0" onAction="#btnPrintOnAction" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: green;" styleClass="btn" stylesheets="@../style/stylesheet.css" text="Print" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

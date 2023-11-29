@@ -80,14 +80,14 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="23.0" layoutY="617.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="597.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
       <TextField fx:id="txtEmployeeName" layoutX="290.0" layoutY="79.0" prefHeight="33.0" prefWidth="230.0" />
       <TextField fx:id="txtJobTitle" layoutX="289.0" layoutY="140.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblEmployee" layoutX="20.0" layoutY="243.0" prefHeight="369.0" prefWidth="982.0">
+      <TableView fx:id="tblEmployee" layoutX="20.0" layoutY="243.0" prefHeight="350.0" prefWidth="982.0">
          <columns>
             <TableColumn fx:id="colEmployeeId" prefWidth="99.0" text="Employee id" />
             <TableColumn fx:id="colEmployeeName" prefWidth="182.0" text="Employee name" />

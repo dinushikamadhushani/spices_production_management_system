@@ -14,12 +14,19 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.db.DbConnection;
 import lk.ijse.dto.*;
 import lk.ijse.dto.tm.CartTm;
 import lk.ijse.dto.tm.MaterialCartTm;
 import lk.ijse.model.*;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -195,10 +202,6 @@ public class MaterialDetailFormController {
             tblMaterialCart.setItems(obList1);
             calculateNetTotal();
             txtQty.clear();
-        } else {
-            new Alert(Alert.AlertType.ERROR, "The stock haven't ").show();
-            txtQty.setStyle("-fx-border-color: Red");
-
         }
 
     }
@@ -308,6 +311,14 @@ public class MaterialDetailFormController {
 
     @FXML
     void btnPrintOnAction(ActionEvent event) {
+        InputStream resource = this.getClass().getResourceAsStream("/reports/Material.jrxml");
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(resource);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DbConnection.getInstance().getConnection());
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

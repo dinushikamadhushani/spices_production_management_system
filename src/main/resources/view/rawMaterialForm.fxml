@@ -80,13 +80,13 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="13.0" layoutY="612.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="6.0" layoutY="586.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey;" text="Back">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
       <TextField fx:id="txtRawName" layoutX="267.0" layoutY="70.0" prefHeight="33.0" prefWidth="230.0" />
-      <TableView fx:id="tblRawMaterial" layoutX="5.0" layoutY="181.0" prefHeight="421.0" prefWidth="982.0">
+      <TableView fx:id="tblRawMaterial" layoutX="5.0" layoutY="181.0" prefHeight="400.0" prefWidth="982.0">
          <columns>
             <TableColumn fx:id="colRawId" prefWidth="211.0" text="Raw Material id" />
             <TableColumn fx:id="colMaterialName" prefWidth="332.0" text="Material Name" />
