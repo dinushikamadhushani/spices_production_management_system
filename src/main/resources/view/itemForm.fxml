@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="724.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ItemFormController">
+<AnchorPane fx:id="root" prefHeight="724.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.spices.controller.ItemFormController">
    <children>
       <Label layoutX="14.0" layoutY="11.0" text="Item Manage" textFill="#b90404">
          <font>

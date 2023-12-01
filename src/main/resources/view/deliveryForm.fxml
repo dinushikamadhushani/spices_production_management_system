@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="724.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DeliveryFormController">
+<AnchorPane fx:id="root" prefHeight="724.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.spices.controller.DeliveryFormController">
    <children>
       <Label layoutX="19.0" layoutY="4.0" text="Delivery Manage" textFill="#b91705">
          <font>
@@ -64,7 +64,7 @@
             <TableColumn fx:id="colEmployeeId" prefWidth="171.0" text="Employee id" />
             <TableColumn fx:id="colLocation" prefWidth="176.0" text="Location" />
             <TableColumn fx:id="colDeliveryStatus" prefWidth="200.0" text="Delivery status" />
-            <TableColumn fx:id="colTel" prefWidth="148.0" text="Tel" />
+            <TableColumn fx:id="colEmail" prefWidth="148.0" text="Email" />
          </columns>
       </TableView>
       <Label layoutX="23.0" layoutY="52.0" text="Delivery Id" textFill="#363232">
@@ -82,13 +82,12 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <TextField fx:id="txtTel" layoutX="506.0" layoutY="142.0" prefHeight="33.0" prefWidth="230.0" />
       <Label layoutX="261.0" layoutY="122.0" text="Delivery status" textFill="#363232">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="505.0" layoutY="122.0" text="Tel" textFill="#363232">
+      <Label layoutX="505.0" layoutY="122.0" text="Email" textFill="#363232">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -100,5 +99,6 @@
       </Label>
       <ComboBox fx:id="cmbEmployeeId" layoutX="502.0" layoutY="76.0" onAction="#cmbEmployeeIdOnAction" prefHeight="30.0" prefWidth="230.0" stylesheets="@../style/stylesheet.css" />
       <TextField fx:id="txtOrderId" layoutX="263.0" layoutY="75.0" prefHeight="33.0" prefWidth="228.0" />
+      <TextField layoutX="502.0" layoutY="142.0" prefHeight="31.0" prefWidth="230.0" />
    </children>
 </AnchorPane>

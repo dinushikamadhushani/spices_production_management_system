@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="726.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierFormController">
+<AnchorPane fx:id="root" prefHeight="726.0" prefWidth="1082.0" style="-fx-background-color: blur;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.spices.controller.SupplierFormController">
    <children>
       <Label layoutX="4.0" text="Supplier Manage" textFill="#bc2503">
          <font>

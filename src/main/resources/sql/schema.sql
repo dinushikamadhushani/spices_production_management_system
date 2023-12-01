@@ -97,7 +97,7 @@ CREATE TABLE delivery(
                          employee_id VARCHAR(20) NOT NULL,
                          location VARCHAR(25) ,
                          delivery_status VARCHAR(20),
-                         tel INT(15),
+                         email Varchar(35),
 
 
                          CONSTRAINT FOREIGN KEY(employee_id) REFERENCES employee(employee_id) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -120,24 +120,6 @@ CREATE TABLE supplier(
 DESC supplier;
 
 
-
-
-
-
-
-CREATE TABLE bill_of_material(
-                                 rawMaterial_id VARCHAR(20) NOT NULL,
-                                 item_id VARCHAR(20) NOT NULL,
-                                 qty INT(25),
-                                 date DATE,
-                                 cost DECIMAL(10,2) NOT NULL,
-                                 FOREIGN KEY(rawMaterial_id ) REFERENCES raw_material (rawMaterial_id ) ON DELETE CASCADE ON UPDATE CASCADE,
-                                 FOREIGN KEY(item_id) REFERENCES item(item_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-DESC bill_of_material;
-
-
 CREATE TABLE supplier_detail(
                                 supplier_id VARCHAR(20) NOT NULL,
                                 rawMaterial_id VARCHAR(20) NOT NULL,
@@ -150,7 +132,11 @@ CREATE TABLE supplier_detail(
 
 DESC supplier_detail;
 
-INSERT INTO employee VALUES('E001', 'Meri', 'meri@gmail.com', 11112233,'Manager',50000.00 ,'2023-10-5');
+INSERT INTO employee VALUES('E001', 'Meri Perera', 'meri@gmail.com', 0713356788,'Manager',50000.00 ,'2023-10-5');
+INSERT INTO employee VALUES('E002', 'Nadee Wikramage', 'nadee2000@gmail.com', 0712230556,'Worker',40000.00 ,'2023-10-5');
+INSERT INTO employee VALUES('E003', 'Kamal weerasekara', 'kamal@gmail.com', 0713356733,'Worker',35000.00 ,'2023-10-5');
+INSERT INTO employee VALUES('E004', 'Nimal', 'nimal@gmail.com', 0714456788,'Worker',35000.00 ,'2023-10-5');
+
 
 INSERT INTO user VALUES ('U001','Meri','nadeesamaraweera2000@gmail.com','1111','E001');
 
